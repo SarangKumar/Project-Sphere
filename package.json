@@ -36,6 +36,6 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "src/**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
