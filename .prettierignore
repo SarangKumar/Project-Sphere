@@ -1,0 +1,40 @@
+# Directories
+node_modules
+.cache
+build
+dist
+out
+tmp
+temp
+.next
+.contentlayer
+
+# Files
+package-lock.json
+yarn.lock
+*.log
+*.sqlite
+*.db
+*.pem
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# IDE files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.bak
