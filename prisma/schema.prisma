@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  OWNER
+  COLLABORATOR
+  VIEWER
+}
+
+enum SubscriptionTier {
+  FREE
+  GOLD
+  PLATINUM
+}
+
+model User {
+  id            String         @id @default(auto()) @map("_id") @db.ObjectId
+  email         String         @unique
+  password      String
+  name          String?
+  projects      Project[]
+  subscriptions Subscription[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  Collaborator  Collaborator[]
+}
+
+model Project {
+  id            String         @id @default(auto()) @map("_id") @db.ObjectId
+  title         String
+  description   String?
+  ownerId       String         @db.ObjectId
+  owner         User           @relation(fields: [ownerId], references: [id])
+  collaborators Collaborator[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  shareableLink ShareableLink?
+}
+
+model Collaborator {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String  @db.ObjectId
+  projectId String  @db.ObjectId
+  user      User    @relation(fields: [userId], references: [id])
+  project   Project @relation(fields: [projectId], references: [id])
+  role      Role
+}
+
+model ShareableLink {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  projectId String   @unique @db.ObjectId
+  project   Project  @relation(fields: [projectId], references: [id])
+  link      String
+  expiry    DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Subscription {
+  id        String           @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String           @db.ObjectId
+  user      User             @relation(fields: [userId], references: [id])
+  status    String
+  tier      SubscriptionTier
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+}
