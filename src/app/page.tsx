@@ -1,3 +1,4 @@
+import LoginButton from "@/components/login-button";
 import TechIconBadge from "@/components/techicon-badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -20,6 +21,7 @@ export default function Home() {
         />
         <TechIconBadge name="nextjs" iconName="nextjs2" className="size-8" />
       </div>
+      <LoginButton />
     </main>
   );
 }

@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { TailwindIndicator } from "@/components/dev/tailwind-indicator";
+import Providers from "@/components/providers";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -53,7 +54,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        {children}
+        <Providers>{children}</Providers>
         <TailwindIndicator />
       </body>
     </html>
