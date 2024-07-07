@@ -26,8 +26,12 @@ const NavAuth = () => {
         </div>
       ) : (
         <>
-          <SignInButton provider="github">Sign In Github</SignInButton>
-          <SignInButton provider="google">Sign In Google</SignInButton>
+          <Link
+            href="/sign-in"
+            className={cn(buttonVariants({ variant: "outline" }))}
+          >
+            Sign In
+          </Link>
         </>
       )}
     </>

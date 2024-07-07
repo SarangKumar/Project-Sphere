@@ -8,9 +8,11 @@ datasource db {
 }
 
 enum Role {
-  OWNER
-  COLLABORATOR
-  VIEWER
+  // OWNER
+  // COLLABORATOR
+  // VIEWER
+  ADMIN
+
 }
 
 enum SubscriptionTier {
@@ -22,13 +24,18 @@ enum SubscriptionTier {
 model User {
   id            String         @id @default(auto()) @map("_id") @db.ObjectId
   email         String         @unique
-  password      String
   name          String?
+  image         String?
+  password      String
   projects      Project[]
-  subscriptions Subscription[]
+  subscriptions SubscriptionTier @default(FREE)
+  sessions      Session[]
+  // Optional for WebAuthn support
+  Authenticator Authenticator[]
+  Collaborator  Collaborator[]
+
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
-  Collaborator  Collaborator[]
 }
 
 model Project {
@@ -38,9 +45,46 @@ model Project {
   ownerId       String         @db.ObjectId
   owner         User           @relation(fields: [ownerId], references: [id])
   collaborators Collaborator[]
+  shareableLink ShareableLink?
+  
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
-  shareableLink ShareableLink?
+}
+
+model VerificationToken {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String
+  token      String
+  expires    DateTime
+ 
+  @@unique([identifier, token])
+}
+ 
+// Optional for WebAuthn support
+model Authenticator {
+  credentialID         String  @id @map("_id")
+  userId               String  @db.ObjectId
+  providerAccountId    String
+  credentialPublicKey  String
+  counter              Int
+  credentialDeviceType String
+  credentialBackedUp   Boolean
+  transports           String?
+ 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  @@unique([userId, credentialID])
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique
+  userId       String   @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Collaborator {
@@ -62,12 +106,12 @@ model ShareableLink {
   updatedAt DateTime @updatedAt
 }
 
-model Subscription {
-  id        String           @id @default(auto()) @map("_id") @db.ObjectId
-  userId    String           @db.ObjectId
-  user      User             @relation(fields: [userId], references: [id])
-  status    String
-  tier      SubscriptionTier
-  createdAt DateTime         @default(now())
-  updatedAt DateTime         @updatedAt
-}
+// model Subscription {
+//   id        String           @id @default(auto()) @map("_id") @db.ObjectId
+//   userId    String           @db.ObjectId
+//   user      User             @relation(fields: [userId], references: [id])
+//   status    String
+//   tier      SubscriptionTier
+//   createdAt DateTime         @default(now())
+//   updatedAt DateTime         @updatedAt
+// }

@@ -1,20 +1,39 @@
 "use client";
 
 import { signIn, signOut } from "next-auth/react";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
+import { VariantProps } from "class-variance-authority";
+
+export interface SignInButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+  provider: string;
+}
 
 export const SignInButton = ({
   provider,
+  className,
   children,
-}: {
-  provider: string;
-  children: React.ReactNode;
-}) => {
-  return <Button onClick={() => signIn(provider)}>{children}</Button>;
+  ...props
+}: SignInButtonProps) => {
+  return (
+    <Button className={className} onClick={() => signIn(provider)} {...props}>
+      {children}
+    </Button>
+  );
 };
 
-export const SignOutButton = ({ children }: { children: React.ReactNode }) => {
+export const SignOutButton = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <Button onClick={() => signOut({ callbackUrl: "/" })}>{children}</Button>
+    <Button className={className} onClick={() => signOut({ callbackUrl: "/" })}>
+      {children}
+    </Button>
   );
 };

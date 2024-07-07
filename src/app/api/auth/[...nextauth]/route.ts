@@ -1,3 +1,4 @@
-import { handlers } from "./options";
+// import { handlers } from "@/lib/auth"; // Referring to the auth.ts we just created
+// export const { GET, POST } = handlers;
 
-export { handlers as GET, handlers as POST };
+export { GET, POST } from "@/lib/auth";
