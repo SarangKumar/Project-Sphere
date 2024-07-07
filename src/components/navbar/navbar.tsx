@@ -24,7 +24,7 @@ const Navbar = async () => {
 
   return (
     <nav className="border-default relative z-40 border-b backdrop-blur-sm transition-opacity">
-      <div className="relative mx-auto flex h-16 items-center justify-between lg:container lg:px-16 xl:px-20">
+      <div className="relative mx-auto flex h-16 items-center justify-between px-4 lg:container md:px-8 lg:px-16 xl:px-20">
         <div className="flex items-center gap-x-4">
           <Link href="/" className="flex items-center font-bold text-primary">
             <Logo className="mr-2" />

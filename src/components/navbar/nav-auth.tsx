@@ -2,7 +2,7 @@
 import React from "react";
 import { SignInButton, SignOutButton } from "./auth-button";
 import { useSession } from "next-auth/react";
-import UserProfile from "./user-profile";
+import { AvatarHoverCard } from "./user-profile";
 import Link from "next/link";
 import { Button, buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
@@ -19,11 +19,16 @@ const NavAuth = () => {
             Dashboard
           </Link>
           {/* <SignOutButton>Sign Out</SignOutButton> */}
-          <UserProfile
+          {/* <UserProfile
             name={user?.name || ""}
             email={user?.email || ""}
             image={user?.image || ""}
-          />
+          /> */}
+          <AvatarHoverCard
+            name={user?.name || ""}
+            email={user?.email || ""}
+            image={user?.image || ""}
+          />{" "}
         </div>
       ) : (
         <SignInButton provider="google">Sign In</SignInButton>
