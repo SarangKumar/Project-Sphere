@@ -5,17 +5,20 @@ const Hero = () => {
   return (
     <Container className="">
       <div className="flex flex-col items-center justify-center space-y-4">
-        <h1 className="mx-auto text-4xl text-foreground sm:text-5xl sm:leading-none lg:text-7xl">
-          <span className="block text-balance text-center">One Two Three</span>
+        <h1 className="mx-auto text-4xl font-bold text-foreground sm:text-5xl sm:leading-none lg:text-7xl">
+          <span className="block text-balance text-center">
+            Collaborate, Create, and
+          </span>
           <span className="block text-balance text-center text-primary">
-            Four Five Six
+            Conquer Projects with Ease!
           </span>
         </h1>
-        <p className="mx-auto my-3 max-w-2xl text-balance pt-2 text-center text-sm text-foreground sm:mt-5 sm:text-base lg:mb-0 lg:text-lg">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-          accusamus nisi rem provident modi. Atque rem voluptas veritatis
-          nostrum. Sequi minima, necessitatibus soluta dolorum maxime at itaque
-          minus quaerat! Quis!
+        <p className="mx-auto my-3 max-w-lg text-balance pt-2 text-center text-sm text-foreground sm:mt-5 sm:text-base lg:mb-0">
+          {/* Project Sphere is open source
+          <br /> */}
+          Ultimate tool for team collaboration and workflow efficiency, perfect
+          for solo developers or large teams to create, manage, and share
+          projects effortlessly.
         </p>
       </div>
     </Container>

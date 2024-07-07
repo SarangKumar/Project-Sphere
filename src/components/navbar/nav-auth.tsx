@@ -28,7 +28,7 @@ const NavAuth = () => {
             name={user?.name || ""}
             email={user?.email || ""}
             image={user?.image || ""}
-          />{" "}
+          />
         </div>
       ) : (
         <SignInButton provider="google">Sign In</SignInButton>

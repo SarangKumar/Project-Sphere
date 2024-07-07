@@ -11,7 +11,7 @@ export default function Home() {
       <Navbar />
       <main className={cn("flex flex-col items-center justify-between p-24")}>
         <Hero />
-        <div>
+        <div className="flex items-center gap-x-2">
           <Button size="lg">Typescript</Button>
           <Button size="lg" variant="secondary">
             <BellRing className="mr-2 size-4 stroke-2 text-secondary-foreground" />
