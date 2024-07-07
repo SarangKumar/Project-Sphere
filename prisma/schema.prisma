@@ -1,3 +1,9 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,50 +13,61 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Role {
-  // OWNER
-  // COLLABORATOR
-  // VIEWER
+enum UserRole {
   ADMIN
-
-}
-
-enum SubscriptionTier {
-  FREE
-  GOLD
-  PLATINUM
+  USER
 }
 
 model User {
-  id            String         @id @default(auto()) @map("_id") @db.ObjectId
-  email         String         @unique
+  id            String          @id @default(auto()) @map("_id") @db.ObjectId
   name          String?
+  email         String?         @unique
+  hashedPassword String?
+  emailVerified DateTime?
   image         String?
-  password      String
-  projects      Project[]
-  subscriptions SubscriptionTier @default(FREE)
+  accounts      Account[]
   sessions      Session[]
+  role          UserRole?       @default(ADMIN)
   // Optional for WebAuthn support
   Authenticator Authenticator[]
-  Collaborator  Collaborator[]
-
-  createdAt     DateTime       @default(now())
-  updatedAt     DateTime       @updatedAt
+ 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
-
-model Project {
-  id            String         @id @default(auto()) @map("_id") @db.ObjectId
-  title         String
-  description   String?
-  ownerId       String         @db.ObjectId
-  owner         User           @relation(fields: [ownerId], references: [id])
-  collaborators Collaborator[]
-  shareableLink ShareableLink?
-  
-  createdAt     DateTime       @default(now())
-  updatedAt     DateTime       @updatedAt
+ 
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.String
+  access_token      String? @db.String
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.String
+  session_state     String?
+ 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+ 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  @@unique([provider, providerAccountId])
 }
-
+ 
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique
+  userId       String   @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+ 
 model VerificationToken {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   identifier String
@@ -75,43 +92,3 @@ model Authenticator {
  
   @@unique([userId, credentialID])
 }
-
-model Session {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
-  sessionToken String   @unique
-  userId       String   @db.ObjectId
-  expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model Collaborator {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  userId    String  @db.ObjectId
-  projectId String  @db.ObjectId
-  user      User    @relation(fields: [userId], references: [id])
-  project   Project @relation(fields: [projectId], references: [id])
-  role      Role
-}
-
-model ShareableLink {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  projectId String   @unique @db.ObjectId
-  project   Project  @relation(fields: [projectId], references: [id])
-  link      String
-  expiry    DateTime
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-// model Subscription {
-//   id        String           @id @default(auto()) @map("_id") @db.ObjectId
-//   userId    String           @db.ObjectId
-//   user      User             @relation(fields: [userId], references: [id])
-//   status    String
-//   tier      SubscriptionTier
-//   createdAt DateTime         @default(now())
-//   updatedAt DateTime         @updatedAt
-// }

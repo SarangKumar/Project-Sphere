@@ -60,10 +60,6 @@ export const AvatarHoverCard = ({
               height={50}
               className="size-8 rounded-full"
             />
-            {/* <Avatar>
-              <AvatarImage src={image} />
-              <AvatarFallback>SK</AvatarFallback>
-            </Avatar> */}
             <span className="sr-only">Open user profile</span>
           </>
         </button>

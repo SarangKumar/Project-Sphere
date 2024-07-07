@@ -1,14 +1,13 @@
-"use client";
+// "use client";
 import React from "react";
-import { SignInButton, SignOutButton } from "./auth-button";
-import { useSession } from "next-auth/react";
 import { AvatarHoverCard } from "./user-profile";
 import Link from "next/link";
 import { Button, buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
+import { auth } from "@/auth";
 
-const NavAuth = () => {
-  const { data: session } = useSession();
+const NavAuth = async () => {
+  const session = await auth();
   const user = session?.user;
 
   return (
@@ -21,7 +20,7 @@ const NavAuth = () => {
           <AvatarHoverCard
             name={user?.name || ""}
             email={user?.email || ""}
-            image={user?.image || ""}
+            image={user?.image || " "}
           />
         </div>
       ) : (

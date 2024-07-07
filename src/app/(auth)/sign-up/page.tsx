@@ -1,3 +1,4 @@
+import SignupForm from "@/components/auth/signup-form";
 import { SignInButton } from "@/components/navbar/auth-button";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -55,38 +56,7 @@ const SignUpPage = () => {
           <span className="absolute -z-10 flex w-full -translate-y-2 items-center border-b" />
         </div>
 
-        <div className="my-6 space-y-4">
-          <div className="space-y-1">
-            <Label htmlFor="email" className="font-normal">
-              Email
-            </Label>
-            <Input
-              className="text-xs text-secondary-foreground"
-              name="email"
-              id="email"
-              placeholder="example@example.com"
-              required
-              type="email"
-            />
-          </div>
-
-          <div className="space-y-1">
-            <Label htmlFor="password" className="font-normal">
-              Password
-            </Label>
-            <Input
-              name="password"
-              required
-              id="password"
-              autoComplete="current-password"
-              placeholder="••••••••"
-              type="password"
-            />
-          </div>
-          <div className="space-y-1 py-3">
-            <Button className="h-9 w-full">Sign Up</Button>
-          </div>
-        </div>
+        <SignupForm />
 
         <p className="text-center text-xs">
           Have an account ?

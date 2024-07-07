@@ -1,6 +1,6 @@
 "use client";
 
-import { signIn, signOut } from "next-auth/react";
+import { login, logout } from "@/actions/auth";
 import { Button, buttonVariants } from "../ui/button";
 import { VariantProps } from "class-variance-authority";
 
@@ -18,7 +18,7 @@ export const SignInButton = ({
   ...props
 }: SignInButtonProps) => {
   return (
-    <Button className={className} onClick={() => signIn(provider)} {...props}>
+    <Button className={className} onClick={() => login(provider)} {...props}>
       {children}
     </Button>
   );
@@ -32,7 +32,7 @@ export const SignOutButton = ({
   className?: string;
 }) => {
   return (
-    <Button className={className} onClick={() => signOut({ callbackUrl: "/" })}>
+    <Button className={className} onClick={() => logout()}>
       {children}
     </Button>
   );
