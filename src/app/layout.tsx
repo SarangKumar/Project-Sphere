@@ -7,6 +7,7 @@ import { TailwindIndicator } from "@/components/dev/tailwind-indicator";
 import Providers from "@/components/providers";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { Analytics } from "@vercel/analytics/react";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -53,12 +54,12 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-dvh bg-background antialiased",
-          // fontSans.variable,
           GeistSans.className
         )}
       >
         <Providers>{children}</Providers>
         <TailwindIndicator />
+        <Analytics />
       </body>
     </html>
   );
