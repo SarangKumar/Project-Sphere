@@ -14,5 +14,7 @@ export const SignInButton = ({
 };
 
 export const SignOutButton = ({ children }: { children: React.ReactNode }) => {
-  return <Button onClick={() => signOut()}>{children}</Button>;
+  return (
+    <Button onClick={() => signOut({ callbackUrl: "/" })}>{children}</Button>
+  );
 };

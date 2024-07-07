@@ -1,4 +1,5 @@
 import { EncryptButton } from "@/components/dev/encryption-button";
+import Test from "@/components/dev/test";
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar/navbar";
 import TechIconBadge from "@/components/techicon-badge";
@@ -19,6 +20,7 @@ export default function Home() {
             React
           </Button>
           <EncryptButton targetText="SarangKumar" />
+          <Test />
         </div>
       </main>
     </>

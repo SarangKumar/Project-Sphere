@@ -85,7 +85,7 @@ export const EncryptButton = ({
           duration: 1,
           ease: "linear",
         }}
-        className="absolute inset-0 z-0 scale-125 bg-gradient-to-t from-indigo-400/0 from-40% via-primary/40 to-primary/10 to-60% opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="absolute inset-0 z-0 scale-125 bg-gradient-to-t from-indigo-400/0 from-40% via-primary/100 to-primary/0 to-60% opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       />
     </motion.button>
   );

@@ -18,12 +18,6 @@ const NavAuth = () => {
           <Link className={cn(buttonVariants())} href="/dashboard">
             Dashboard
           </Link>
-          {/* <SignOutButton>Sign Out</SignOutButton> */}
-          {/* <UserProfile
-            name={user?.name || ""}
-            email={user?.email || ""}
-            image={user?.image || ""}
-          /> */}
           <AvatarHoverCard
             name={user?.name || ""}
             email={user?.email || ""}
@@ -31,7 +25,10 @@ const NavAuth = () => {
           />
         </div>
       ) : (
-        <SignInButton provider="google">Sign In</SignInButton>
+        <>
+          <SignInButton provider="github">Sign In Github</SignInButton>
+          <SignInButton provider="google">Sign In Google</SignInButton>
+        </>
       )}
     </>
   );
