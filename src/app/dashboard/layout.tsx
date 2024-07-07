@@ -21,13 +21,13 @@ const DashboardLayout = ({
           className="h-full rounded-lg border bg-background"
         >
           <ResizablePanel
-            defaultSize={25}
+            defaultSize={20}
             className="max-w-[260px min-w-[52px]"
           >
             <DashboardSidebar />
           </ResizablePanel>
           <ResizableHandle withHandle />
-          <ResizablePanel defaultSize={75} className="p-2 text-sm">
+          <ResizablePanel defaultSize={80} className="p-2 text-sm">
             {children}
           </ResizablePanel>
         </ResizablePanelGroup>

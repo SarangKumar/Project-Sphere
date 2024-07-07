@@ -1,9 +1,9 @@
 "use client";
 import { useSession } from "next-auth/react";
-import Image from "next/image";
 import React from "react";
-import NavAuth from "../navbar/nav-auth";
 import { AvatarHoverCard } from "../navbar/user-profile";
+import Logo from "../logo";
+import { ChevronRight } from "lucide-react";
 
 const DashboardNavbar = () => {
   const { data: session } = useSession();
@@ -11,7 +11,13 @@ const DashboardNavbar = () => {
   return (
     <nav className="border-default bg-green-60 relative z-40 backdrop-blur-sm transition-opacity">
       <div className="relative mx-auto flex h-14 items-center justify-between px-4">
-        <span></span>
+        <div className="flex items-center gap-x-1">
+          <Logo />
+          <ChevronRight className="text-muted-foreground" />
+          <span className="text-sm text-muted-foreground">
+            {(user?.name || "").split(" ")[0]}&apos;s Dashboard
+          </span>
+        </div>
         <span>
           <AvatarHoverCard
             name={user?.name || ""}
