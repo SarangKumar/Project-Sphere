@@ -1,3 +1,4 @@
+import { EncryptButton } from "@/components/dev/encryption-button";
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar/navbar";
 import TechIconBadge from "@/components/techicon-badge";
@@ -14,9 +15,10 @@ export default function Home() {
         <div className="flex items-center gap-x-2">
           <Button size="lg">Typescript</Button>
           <Button size="lg" variant="secondary">
-            <BellRing className="mr-2 size-4 stroke-2 text-secondary-foreground" />
+            <BellRing className="mr-2 size-4 animate-wave stroke-2 text-secondary-foreground" />
             React
           </Button>
+          <EncryptButton targetText="SarangKumar" />
         </div>
       </main>
     </>
