@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import Logo from "../logo";
 
 const Navbar = async () => {
-  let githubStars: number | string = 0,
+  let githubStars: number = 0,
     githubForks = 0;
   try {
     const response = await axios.get(
@@ -19,14 +19,14 @@ const Navbar = async () => {
     githubStars = response.data.stargazers_count;
     githubForks = response.data.forks_count;
   } catch (error) {
-    githubStars = NaN;
+    githubStars = -1;
   }
 
   return (
     <nav className="border-default relative z-40 border-b backdrop-blur-sm transition-opacity">
       <div className="relative mx-auto flex h-16 items-center justify-between lg:container lg:px-16 xl:px-20">
         <div className="flex items-center gap-x-4">
-          <Link href="/" className="flex items-center text-primary">
+          <Link href="/" className="flex items-center font-bold text-primary">
             <Logo className="mr-2" />
             Project Sphere
           </Link>
@@ -61,8 +61,8 @@ const Navbar = async () => {
               )}
             >
               <GitHubLogoIcon className="size-[17px] text-secondary-foreground" />
-              {githubStars && (
-                <span className="text-xxs font-light text-secondary-foreground">
+              {githubStars !== -1 && (
+                <span className="text-xxs text-secondary-foreground">
                   {githubStars}
                 </span>
               )}

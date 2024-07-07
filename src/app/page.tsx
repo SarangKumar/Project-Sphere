@@ -1,3 +1,4 @@
+import Hero from "@/components/hero";
 import Navbar from "@/components/navbar/navbar";
 import TechIconBadge from "@/components/techicon-badge";
 import { Button } from "@/components/ui/button";
@@ -9,21 +10,7 @@ export default function Home() {
     <>
       <Navbar />
       <main className={cn("flex flex-col items-center justify-between p-24")}>
-        <div className="space-y-3">
-          <TechIconBadge
-            name="nextjs"
-            grayscale={true}
-            iconName="nextjs2"
-            className="size-8"
-          />
-          <TechIconBadge
-            name="nextjs"
-            grayscale={false}
-            iconName="nextjs2"
-            className="size-8"
-          />
-          <TechIconBadge name="nextjs" iconName="nextjs2" className="size-8" />
-        </div>
+        <Hero />
         <div>
           <Button size="lg">Typescript</Button>
           <Button size="lg" variant="secondary">

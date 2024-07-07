@@ -18,7 +18,7 @@ const NavAuth = () => {
           <Link className={cn(buttonVariants())} href="/dashboard">
             Dashboard
           </Link>
-          <SignOutButton>Sign Out</SignOutButton>
+          {/* <SignOutButton>Sign Out</SignOutButton> */}
           <UserProfile
             name={user?.name || ""}
             email={user?.email || ""}

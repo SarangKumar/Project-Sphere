@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { TailwindIndicator } from "@/components/dev/tailwind-indicator";
 import Providers from "@/components/providers";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -50,8 +52,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          "min-h-screen bg-background antialiased",
+          // fontSans.variable,
+          GeistSans.className
         )}
       >
         <Providers>{children}</Providers>

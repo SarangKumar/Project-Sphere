@@ -12,7 +12,7 @@ const UserProfile = ({
 }) => {
   return (
     <div className="flex items-center gap-x-2">
-      <div className="flex flex-col items-end">
+      <div className="3xl:flex hidden flex-col items-end">
         <span className="text-xxs">{name}</span>
         <span className="text-xxs">{email}</span>
       </div>
