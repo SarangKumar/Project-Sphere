@@ -1,5 +1,5 @@
 import SignupForm from "@/components/auth/signup-form";
-import { SignInButton } from "@/components/navbar/auth-button";
+import { SignInButton } from "@/components/auth/auth-button";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";

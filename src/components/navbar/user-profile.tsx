@@ -4,7 +4,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "../ui/hover-card";
-import { SignOutButton } from "./auth-button";
+import { SignOutButton } from "../auth/auth-button";
 import Avatar from "./avatar";
 
 export const UserProfile = ({
