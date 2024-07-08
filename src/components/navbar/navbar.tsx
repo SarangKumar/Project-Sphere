@@ -1,25 +1,26 @@
 import React from "react";
-import { Button, buttonVariants } from "../ui/button";
 import Link from "next/link";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { SignInButton } from "./auth-button";
 import axios from "axios";
 import { siteConfig } from "@/config/site";
 import NavAuth from "./nav-auth";
 import { cn } from "@/lib/utils";
 import Logo from "../logo";
+import { formatCompactNumber } from "@/lib/formatters";
+import { buttonVariants } from "../ui/button";
 
 const Navbar = async () => {
-  let githubStars: number = 0,
-    githubForks = 0;
+  let githubStars: string | number = 0,
+    githubForks: string | number = 0;
   try {
     const response = await axios.get(
       "https://api.github.com/repos/SarangKumar/Project-Sphere"
     );
-    githubStars = response.data.stargazers_count;
-    githubForks = response.data.forks_count;
+    // githubStars = formatCompactNumber(Number(12676));
+    githubStars = formatCompactNumber(response.data.forks_count);
   } catch (error) {
-    githubStars = -1;
+    console.log(error);
+    githubStars = "-1";
   }
 
   return (
@@ -32,25 +33,6 @@ const Navbar = async () => {
           </Link>
 
           <div className="flex items-center justify-between gap-x-2">
-            {/* <Button asChild variant="destructive">
-              <Link href="/about">About</Link>
-            </Button>
-            <Button asChild variant="ghost">
-              <Link href="/contact">Contact</Link>
-            </Button>
-            <Button asChild variant="link">
-              <Link href="/blog">Blog</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/dashboard">Dashboard</Link>
-            </Button>
-            <Button asChild variant="neon">
-              <Link href="/docs">Docs</Link>
-            </Button>
-            <Button asChild variant="secondary">
-              <Link href="/profile">Profile</Link>
-            </Button> */}
-
             <a
               target="_blank"
               rel="noreferrer"
@@ -61,11 +43,14 @@ const Navbar = async () => {
               )}
             >
               <GitHubLogoIcon className="size-[17px] text-secondary-foreground" />
-              {githubStars !== -1 && (
+              {/* {githubStars !== "-1" && (
                 <span className="text-xxs text-secondary-foreground">
                   {githubStars}
                 </span>
-              )}
+              )} */}
+              <span className="text-xxs text-secondary-foreground">
+                {githubStars}
+              </span>
             </a>
           </div>
         </div>

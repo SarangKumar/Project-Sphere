@@ -1,13 +1,9 @@
-import Image from "next/image";
 import React from "react";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "../ui/hover-card";
-import { Button } from "../ui/button";
-// import { Avatar, AvatarFallback } from "../ui/avatar";
-// import { AvatarImage } from "@radix-ui/react-avatar";
 import { SignOutButton } from "./auth-button";
 import Avatar from "./avatar";
 

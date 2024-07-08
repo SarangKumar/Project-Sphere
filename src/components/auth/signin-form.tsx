@@ -2,12 +2,12 @@ import React from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { loginWithCreds } from "@/actions/auth";
+// import { loginWithCreds } from "@/actions/auth";
 import SubmitButton from "./submit-button";
 
 const SignInForm = () => {
   return (
-    <form action={loginWithCreds} className="my-6 space-y-4">
+    <form className="my-6 space-y-4">
       <div className="space-y-1">
         <Label htmlFor="email" className="font-normal">
           Email

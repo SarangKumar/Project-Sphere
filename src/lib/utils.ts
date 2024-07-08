@@ -36,3 +36,7 @@ export function getInitials(name: string) {
 
   return (words[0][0] + words[1][0]).toUpperCase();
 }
+
+export function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

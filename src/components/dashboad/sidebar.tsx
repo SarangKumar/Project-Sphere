@@ -1,9 +1,5 @@
-import { cn } from "@/lib/utils";
-import Link from "next/link";
 import React from "react";
-import { buttonVariants } from "../ui/button";
 import { navLinks } from "@/constants";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import SidebarLink from "./sidebar-link";
 
 const DashboardSidebar = () => {

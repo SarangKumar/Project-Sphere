@@ -1,32 +1,29 @@
-// export { auth as middleware } from "@/auth";
-
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { auth } from "@/auth";
 
 const protectedRoutes = ["/dashboard"];
-const authRoutes = ["/sign-in", "sign-up"];
+const authRoutes = ["/auth/sign-in", "/auth/sign-up"];
 
 export default async function middleware(request: NextRequest) {
-  const session = await auth();
+  // const session = await auth();
 
-  const isProtected = protectedRoutes.some((route) =>
-    request.nextUrl.pathname.startsWith(route)
-  );
+  // const isProtected = protectedRoutes.some((route) =>
+  //   request.nextUrl.pathname.startsWith(route)
+  // );
 
-  const isAuth = authRoutes.some((route) =>
-    request.nextUrl.pathname.startsWith(route)
-  );
+  // const isAuth = authRoutes.some((route) =>
+  //   request.nextUrl.pathname.startsWith(route)
+  // );
 
-  if (!session && isProtected) {
-    const absoluteURL = new URL("/", request.nextUrl.origin);
-    return NextResponse.redirect(absoluteURL.toString());
-  }
+  // if (!session && isProtected) {
+  //   const absoluteURL = new URL("/", request.nextUrl.origin);
+  //   return NextResponse.redirect(absoluteURL.toString());
+  // }
 
-  if (session && isAuth) {
-    const absoluteURL = new URL("/dashboard", request.nextUrl.origin);
-    return NextResponse.redirect(absoluteURL.toString());
-  }
+  // if (session && isAuth) {
+  //   const absoluteURL = new URL("/dashboard", request.nextUrl.origin);
+  //   return NextResponse.redirect(absoluteURL.toString());
+  // }
 
   return NextResponse.next();
 }

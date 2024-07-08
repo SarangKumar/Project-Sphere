@@ -1,13 +1,13 @@
-// "use client";
+"use client";
 import React from "react";
 import { AvatarHoverCard } from "./user-profile";
 import Link from "next/link";
 import { Button, buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
-import { auth } from "@/auth";
+import { useSession } from "next-auth/react";
 
-const NavAuth = async () => {
-  const session = await auth();
+const NavAuth = () => {
+  const { data: session } = useSession();
   const user = session?.user;
 
   return (
@@ -26,7 +26,7 @@ const NavAuth = async () => {
       ) : (
         <>
           <Link
-            href="/sign-in"
+            href="/auth/sign-in"
             className={cn(buttonVariants({ variant: "outline" }))}
           >
             Sign In
