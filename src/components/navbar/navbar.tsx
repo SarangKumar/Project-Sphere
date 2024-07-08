@@ -16,7 +16,6 @@ const Navbar = async () => {
     const response = await axios.get(
       "https://api.github.com/repos/SarangKumar/Project-Sphere"
     );
-    // githubStars = formatCompactNumber(Number(12676));
     githubStars = formatCompactNumber(response.data.forks_count);
   } catch (error) {
     console.log(error);
