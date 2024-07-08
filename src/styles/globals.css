@@ -60,7 +60,8 @@
     --primary: 20.5 90.2% 48.2%;
     --primary-foreground: 60 9.1% 97.8%;
     --secondary: 12 6.5% 15.1%;
-    --secondary-foreground: 60 9.1% 97.8%;
+    /* --secondary-foreground: 60 9.1% 97.8%; */
+    --secondary-foreground: 60 5% 80%;
     --muted: 12 6.5% 15.1%;
     --muted-foreground: 24 5.4% 63.9%;
     --accent: 12 6.5% 15.1%;
@@ -80,4 +81,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.card {
+  @apply rounded-md border border-border bg-secondary/50 stroke-[0.1] p-4 text-secondary-foreground shadow-sm transition-colors hover:bg-secondary/80 hover:stroke-[0.15] md:p-8;
 }

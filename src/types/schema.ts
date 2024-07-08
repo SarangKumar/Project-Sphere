@@ -12,3 +12,12 @@ export const loginSchema = z.object({
     .min(1, { message: "Password required!" })
     .min(8, { message: "Password must have at least 8 characters!" }),
 });
+
+export const FormSchema = z.object({
+  topics: z.array(
+    z.object({
+      id: z.string(),
+      text: z.string(),
+    })
+  ),
+});
