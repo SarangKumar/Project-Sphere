@@ -18,9 +18,9 @@ const NavAuth = async () => {
             Dashboard
           </Link>
           <AvatarHoverCard
-            name={user?.name || ""}
-            email={user?.email || ""}
-            image={user?.image || " "}
+            name={user?.name}
+            email={user?.email}
+            image={user?.image}
           />
         </div>
       ) : (

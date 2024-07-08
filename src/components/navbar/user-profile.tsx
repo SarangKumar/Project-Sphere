@@ -6,9 +6,10 @@ import {
   HoverCardTrigger,
 } from "../ui/hover-card";
 import { Button } from "../ui/button";
-import { Avatar, AvatarFallback } from "../ui/avatar";
-import { AvatarImage } from "@radix-ui/react-avatar";
+// import { Avatar, AvatarFallback } from "../ui/avatar";
+// import { AvatarImage } from "@radix-ui/react-avatar";
 import { SignOutButton } from "./auth-button";
+import Avatar from "./avatar";
 
 export const UserProfile = ({
   name,
@@ -22,17 +23,11 @@ export const UserProfile = ({
   return (
     <div className="flex items-center gap-x-2">
       <>
-        <Image
-          src={image}
-          alt={name}
-          width={50}
-          height={50}
-          className="size-8 rounded-full"
-        />
+        <Avatar image={image} name={name} />
         <span className="sr-only">{name} thumbnail</span>
       </>
       <div className="flex flex-col items-start">
-        <span className="text-xxs">{name}</span>
+        <span className="text-xxs">{name || "Guest User"}</span>
         <span className="text-xxs">{email}</span>
       </div>
     </div>
@@ -44,22 +39,20 @@ export const AvatarHoverCard = ({
   email,
   image,
 }: {
-  name: string;
-  email: string;
-  image: string;
+  name: string | null | undefined;
+  email: string | null | undefined;
+  image: string | null | undefined;
 }) => {
+  name = name || "Guest User";
+  email = email || "";
+  image = image || "";
+
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
         <button>
           <>
-            <Image
-              src={image}
-              alt={name}
-              width={50}
-              height={50}
-              className="size-8 rounded-full"
-            />
+            <Avatar image={image} name={name} />
             <span className="sr-only">Open user profile</span>
           </>
         </button>

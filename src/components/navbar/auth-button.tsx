@@ -3,6 +3,7 @@
 import { login, logout } from "@/actions/auth";
 import { Button, buttonVariants } from "../ui/button";
 import { VariantProps } from "class-variance-authority";
+import { useFormStatus } from "react-dom";
 
 export interface SignInButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -17,9 +18,10 @@ export const SignInButton = ({
   children,
   ...props
 }: SignInButtonProps) => {
+  const { pending } = useFormStatus();
   return (
     <Button className={className} onClick={() => login(provider)} {...props}>
-      {children}
+      {pending ? "..." : children}
     </Button>
   );
 };

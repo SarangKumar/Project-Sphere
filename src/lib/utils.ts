@@ -26,3 +26,13 @@ export function saltAndHashPassword(password: any) {
   const hash = bcrypt.hashSync(password, salt); // Synchronously hash the password
   return hash; // Return the hash directly as a string
 }
+
+export function getInitials(name: string) {
+  const words = name.split(" ");
+
+  if (words.length === 1) {
+    return words[0][0].toUpperCase();
+  }
+
+  return (words[0][0] + words[1][0]).toUpperCase();
+}

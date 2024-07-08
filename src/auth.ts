@@ -7,23 +7,20 @@ import bcrypt from "bcryptjs";
 import { db } from "../prisma/db";
 import { saltAndHashPassword } from "@/lib/utils";
 
-export const {
-  handlers: { GET, POST },
-  signIn,
-  signOut,
-  auth,
-} = NextAuth({
+export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
   providers: [
-    Github({
-      clientId: process.env.AUTH_GITHUB_ID,
-      clientSecret: process.env.AUTH_GITHUB_SECRET,
-    }),
-    Google({
-      clientId: process.env.AUTH_GOOGLE_ID,
-      clientSecret: process.env.AUTH_GOOGLE_SECRET,
-    }),
+    // Github({
+    //   clientId: process.env.AUTH_GITHUB_ID,
+    //   clientSecret: process.env.AUTH_GITHUB_SECRET,
+    // }),
+    // Google({
+    //   clientId: process.env.AUTH_GOOGLE_ID,
+    //   clientSecret: process.env.AUTH_GOOGLE_SECRET,
+    // }),
+    Google,
+    Github,
     Credentials({
       name: "Credentials",
       credentials: {

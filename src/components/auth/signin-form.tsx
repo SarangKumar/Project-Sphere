@@ -3,6 +3,7 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { loginWithCreds } from "@/actions/auth";
+import SubmitButton from "./submit-button";
 
 const SignInForm = () => {
   return (
@@ -35,9 +36,7 @@ const SignInForm = () => {
         />
       </div>
       <div className="space-y-1 py-3">
-        <Button type="submit" className="h-9 w-full">
-          Sign In
-        </Button>
+        <SubmitButton className="h-9 w-full">Sign In</SubmitButton>
       </div>
     </form>
   );
