@@ -3,6 +3,7 @@ import React from "react";
 import { useFormStatus } from "react-dom";
 import { Button, buttonVariants } from "../ui/button";
 import { VariantProps } from "class-variance-authority";
+import LoadingDots from "../loading-dots";
 
 export interface SubmitButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -21,7 +22,7 @@ const SubmitButton = ({ children, className }: SubmitButtonProps) => {
       //   pending ? "bg-gray-600" : "bg-blue-600"
       // } w-full rounded-md px-12 py-3 text-sm font-medium text-white`}
     >
-      {pending ? "Loading..." : children}
+      {pending ? <LoadingDots variant="sm" /> : children}
     </Button>
   );
 };

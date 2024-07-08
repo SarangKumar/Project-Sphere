@@ -74,6 +74,10 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        fade: {
+          "0%, 100%": { opacity: "0.2" },
+          "10%": { opacity: "0.8" },
+        },
         wave: {
           "0%": { transform: "rotate(0.0deg)" },
           "10%": { transform: "rotate(14deg)" },
@@ -89,6 +93,12 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         wave: "wave 2s ease-in-out infinite;",
+        fade: "fade 1.44s infinite ease-out both",
+      },
+      animationDelay: {
+        400: "400ms",
+        180: "180ms",
+        360: "360ms",
       },
     },
   },
