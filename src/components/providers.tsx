@@ -1,6 +1,6 @@
 import { SessionProvider } from "next-auth/react";
 import React from "react";
-// import { TooltipProvider } from "./ui/tooltip";
+import { TooltipProvider } from "./ui/tooltip";
 import { auth } from "@/auth";
 
 const Providers = async ({ children }: { children: React.ReactNode }) => {
@@ -8,9 +8,7 @@ const Providers = async ({ children }: { children: React.ReactNode }) => {
   // console.log(session)
   return (
     <SessionProvider session={session}>
-      {/* <TooltipProvider> */}
-      {children}
-      {/* </TooltipProvider> */}
+      <TooltipProvider>{children}</TooltipProvider>
     </SessionProvider>
   );
 };

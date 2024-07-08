@@ -1,9 +1,7 @@
 import { EncryptButton } from "@/components/dev/encryption-button";
 import Test from "@/components/dev/test";
 import Hero from "@/components/hero";
-import LoadingDots from "@/components/loading-dots";
 import Navbar from "@/components/navbar/navbar";
-import TechIconBadge from "@/components/techicon-badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { BellRing } from "lucide-react";

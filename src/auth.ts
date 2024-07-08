@@ -24,6 +24,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     Credentials({
       name: "Credentials",
       credentials: {
+        name: {
+          label: "Name",
+          type: "text",
+          placeholder: "John Doe",
+        },
         email: {
           label: "Email",
           type: "email",
@@ -37,6 +42,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         }
 
         const email = credentials.email as string;
+        const name = credentials.name as string;
         const hash = saltAndHashPassword(credentials.password);
 
         let user: any = await db.user.findUnique({
@@ -49,6 +55,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           user = await db.user.create({
             data: {
               email,
+              name,
               hashedPassword: hash,
             },
           });

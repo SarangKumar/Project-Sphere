@@ -7,21 +7,12 @@ import LoadingDots from "../loading-dots";
 
 export interface SubmitButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
+    VariantProps<typeof buttonVariants> {}
 
 const SubmitButton = ({ children, className }: SubmitButtonProps) => {
   const { pending } = useFormStatus();
   return (
-    <Button
-      disabled={pending}
-      type="submit"
-      className={className}
-      // className={`${
-      //   pending ? "bg-gray-600" : "bg-blue-600"
-      // } w-full rounded-md px-12 py-3 text-sm font-medium text-white`}
-    >
+    <Button disabled={pending} type="submit" className={className}>
       {pending ? <LoadingDots variant="sm" /> : children}
     </Button>
   );

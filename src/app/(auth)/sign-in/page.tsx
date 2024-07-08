@@ -51,7 +51,7 @@ const SignInPage = () => {
           </SignInButton>
         </div>
 
-        <div className="relative text-center text-xs">
+        {/* <div className="relative text-center text-xs">
           <span className="z-10 bg-background px-1">or</span>
           <span className="absolute -z-10 flex w-full -translate-y-2 items-center border-b" />
         </div>
@@ -67,6 +67,7 @@ const SignInPage = () => {
             Sign Up Now
           </Link>
         </p>
+          */}
       </main>
       <div className="mx-auto w-full px-6 sm:max-w-screen-sm">
         <p className="text-balance text-center text-xs text-muted-foreground">

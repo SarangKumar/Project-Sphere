@@ -2,8 +2,8 @@
 
 import { signIn, signOut } from "@/auth";
 import { db } from "../../prisma/db";
-import { AuthError } from "next-auth";
 import { revalidatePath } from "next/cache";
+import { AuthError } from "next-auth";
 
 const getUserByEmail = async (email: string) => {
   try {

@@ -1,11 +1,60 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import { Button } from "../ui/button";
+import axios from "axios";
+import SubmitButton from "./submit-button";
+import { toast } from "sonner";
 
 const SignupForm = () => {
+  const [userdata, setUserdata] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("/api/auth/auth/sign-up", userdata);
+      console.log(response.data);
+      console.log(response.data);
+
+      toast(response.data.message.title, {
+        description: response.data.message.description,
+      });
+    } catch (error: any) {
+      console.log(error);
+      throw new Error(error.message);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUserdata({
+      ...userdata,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
-    <div className="my-6 space-y-4">
+    <form onSubmit={handleSignup} className="my-6 space-y-4">
+      <div className="space-y-1">
+        <Label htmlFor="email" className="font-normal">
+          Username
+        </Label>
+        <Input
+          className="text-xs text-secondary-foreground"
+          name="name"
+          id="name"
+          placeholder="Alice Doe"
+          required
+          value={userdata.name}
+          onChange={handleChange}
+          type="text"
+        />
+      </div>
+
       <div className="space-y-1">
         <Label htmlFor="email" className="font-normal">
           Email
@@ -16,6 +65,8 @@ const SignupForm = () => {
           id="email"
           placeholder="example@example.com"
           required
+          onChange={handleChange}
+          value={userdata.email}
           type="email"
         />
       </div>
@@ -31,12 +82,14 @@ const SignupForm = () => {
           autoComplete="current-password"
           placeholder="••••••••"
           type="password"
+          onChange={handleChange}
+          value={userdata.password}
         />
       </div>
       <div className="space-y-1 py-3">
-        <Button className="h-9 w-full">Sign Up</Button>
+        <SubmitButton className="h-9 w-full">Sign Up</SubmitButton>
       </div>
-    </div>
+    </form>
   );
 };
 
