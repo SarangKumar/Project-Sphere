@@ -42,14 +42,26 @@ const ColabCard = ({ className }: { className?: string }) => {
               alt="colab background"
             />
           </div>
-          <MousePointer2
-            size={24}
-            className="relative z-50 translate-x-20 translate-y-6 fill-primary/80 stroke-primary stroke-[0.8] transition-transform duration-500 ease-out group-hover/card:-translate-y-6 group-hover/card:translate-x-4"
-          />
-          <MousePointer2
-            size={24}
-            className="relative z-50 -translate-y-2 translate-x-80 fill-primary/80 stroke-primary stroke-[0.8] transition-transform duration-500 ease-out group-hover/card:-translate-y-6 group-hover/card:translate-x-20"
-          />
+
+          <span className="relative z-50 translate-x-20 translate-y-6 transition-transform duration-500 ease-out group-hover/card:translate-x-4 group-hover/card:translate-y-2">
+            <MousePointer2
+              size={24}
+              className="fill-primary/80 stroke-primary stroke-[0.8]"
+            />
+            <span className="relative -top-4 left-6 rounded-full border border-border bg-background px-2 py-0.5 text-xxs">
+              Sarang
+            </span>
+          </span>
+
+          <span className="relative z-50 -translate-y-2 translate-x-80 transition-transform duration-500 ease-out group-hover/card:-translate-y-6 group-hover/card:translate-x-20">
+            <MousePointer2
+              size={24}
+              className="fill-primary/80 stroke-primary stroke-[0.8]"
+            />
+            <span className="relative -top-4 left-6 rounded-full border border-border bg-background px-2 py-0.5 text-xxs">
+              Aditi
+            </span>
+          </span>
         </div>
       </div>
     </section>

@@ -26,11 +26,16 @@ const WebScrapeCard = ({ className }: { className?: string }) => {
               resulting in more relevant and context-aware responses.
             </p>
           </div>
-          <menu className="hidden space-y-1 lg:block">
-            <FeatureListItem feature="Add References" />
-            <FeatureListItem feature="AI Scraping" />
-            <FeatureListItem feature="Context-Aware Responses" />
-          </menu>
+
+          <div className="-m-10 -translate-y-20 md:-m-16">
+            <p className="text-xs leading-[18px] text-secondary-foreground/90">
+              Web scraping is an invaluable tool for businesses and researchers
+              alike. For example, companies looking to stay ahead of the
+              competition can web scrape data from competitor&apos;s websites to
+              monitor pricing, product availability, and customer reviews. By
+              automating this process.
+            </p>
+          </div>
         </div>
       </div>
     </section>
