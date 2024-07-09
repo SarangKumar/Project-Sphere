@@ -7,6 +7,7 @@ import { BellRing } from "lucide-react";
 import TaskManagementCard from "@/components/card/task-management-card";
 import ColabCard from "@/components/card/colab-card";
 import WebScrapeCard from "@/components/card/web-scrape-card";
+import AuthenticationCard from "@/components/card/authentication-card";
 
 export default function Home() {
   return (
@@ -26,12 +27,10 @@ export default function Home() {
           <EncryptButton targetText="SarangKumar" />
         </div>
         <div className="relative grid w-full grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-          <TaskManagementCard key={1} className="lg:col-span-2" />
-          <WebScrapeCard />
-          {/* <WebScrape /> */}
+          <TaskManagementCard className="lg:col-span-2" />
+          <AuthenticationCard />
           <ColabCard />
-          {/* <Card key={2} />
-          <Card key={3} /> */}
+          <WebScrapeCard />
         </div>
       </main>
     </>

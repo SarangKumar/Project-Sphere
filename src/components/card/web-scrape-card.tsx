@@ -33,11 +33,6 @@ const WebScrapeCard = ({ className }: { className?: string }) => {
           </menu>
         </div>
       </div>
-
-      <div className="relative flex translate-y-10 flex-col place-items-center md:translate-y-0">
-        {/* <Image alt="svg" src="/svg/target-bg.svg" fill={true} />
-        <Flame cursor={cursor} cardRef={cardsRef} mouseOnCard={mouseOnCard} /> */}
-      </div>
     </section>
   );
 };

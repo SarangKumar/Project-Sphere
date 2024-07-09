@@ -29,9 +29,9 @@ const Flame = ({ cursor, cardRef, mouseOnCard }: Props) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      className="group-hover:card/drop-shadow-md w-7h-72 h-72 transition-all duration-200"
+      className="h-72 w-72 transition-all duration-200"
     >
-      <defs>
+      <defs className="group-hover/card:shadow-md">
         <radialGradient
           id="primaryGradient"
           gradientUnits="userSpaceOnUse"
