@@ -61,7 +61,7 @@
     --primary-foreground: 60 9.1% 97.8%;
     --secondary: 12 6.5% 15.1%;
     /* --secondary-foreground: 60 9.1% 97.8%; */
-    --secondary-foreground: 60 5% 80%;
+    --secondary-foreground: 60 5% 70%;
     --muted: 12 6.5% 15.1%;
     --muted-foreground: 24 5.4% 63.9%;
     --accent: 12 6.5% 15.1%;
@@ -84,5 +84,5 @@
 }
 
 .card {
-  @apply rounded-md border border-border bg-secondary/50 stroke-[0.1] p-4 text-secondary-foreground shadow-sm transition-colors hover:bg-secondary/80 hover:stroke-[0.15] md:p-8;
+  @apply relative min-h-[380px] overflow-hidden rounded-lg border border-border bg-secondary/50 stroke-[0.1] p-4 text-secondary-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:stroke-[0.15] hover:shadow-md md:p-8;
 }

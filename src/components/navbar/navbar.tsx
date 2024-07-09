@@ -16,7 +16,7 @@ const Navbar = async () => {
     const response = await axios.get(
       "https://api.github.com/repos/SarangKumar/Project-Sphere"
     );
-    githubStars = formatCompactNumber(response.data.forks_count);
+    githubStars = formatCompactNumber(response.data.stargazers_count);
   } catch (error) {
     console.log(error);
     githubStars = "-1";
@@ -28,7 +28,7 @@ const Navbar = async () => {
         <div className="flex items-center gap-x-4">
           <Link href="/" className="flex items-center font-bold text-primary">
             <Logo className="mr-2" asLink={false} />
-            Project Sphere
+            <span className="hidden md:inline">Project Sphere</span>
           </Link>
 
           <div className="flex items-center justify-between gap-x-2">
@@ -42,14 +42,14 @@ const Navbar = async () => {
               )}
             >
               <GitHubLogoIcon className="size-[17px] text-secondary-foreground" />
-              {/* {githubStars !== "-1" && (
+              {githubStars !== "-1" && (
                 <span className="text-xxs text-secondary-foreground">
                   {githubStars}
                 </span>
-              )} */}
-              <span className="text-xxs text-secondary-foreground">
+              )}
+              {/* <span className="text-xxs text-secondary-foreground">
                 {githubStars}
-              </span>
+              </span> */}
             </a>
           </div>
         </div>

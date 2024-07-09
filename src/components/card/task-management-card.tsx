@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import FeatureListItem from "./feature-list-item";
 
-const Card = ({ className }: { className?: string }) => {
+const TaskManagementCard = ({ className }: { className?: string }) => {
   const cardsRef = useRef<HTMLElement>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [mouseOnCard, setMouseOnCard] = useState(false);
@@ -25,7 +25,7 @@ const Card = ({ className }: { className?: string }) => {
   return (
     <section
       className={cn(
-        "relative overflow-hidden rounded-lg border border-border bg-secondary/50 stroke-[0.1] p-4 text-secondary-foreground shadow-sm transition-all hover:border-foreground/20 hover:stroke-[0.15] md:p-8",
+        "card",
         "group/card grid grid-cols-1 gap-4 @container/card lg:grid-cols-2",
         className
       )}
@@ -57,12 +57,12 @@ const Card = ({ className }: { className?: string }) => {
         </div>
       </div>
 
-      <div className="relative flex translate-y-10 flex-col place-items-center md:translate-y-0">
-        <Image alt="svg" src="/svg/target-bg.svg" fill={true} />
+      <div className="relative flex translate-y-10 flex-col place-items-center justify-center md:translate-y-0">
+        <Image alt="svg" src="/svg/target-bg.svg" fill={true} className="p-4" />
         <Flame cursor={cursor} cardRef={cardsRef} mouseOnCard={mouseOnCard} />
       </div>
     </section>
   );
 };
 
-export default Card;
+export default TaskManagementCard;
