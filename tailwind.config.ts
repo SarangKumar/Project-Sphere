@@ -29,6 +29,10 @@ const config = {
         xxs: "12px",
       },
       colors: {
+        info: "var(--ds-blue-700)",
+        warn: "var(--ds-amber-700)",
+        success: "var(--ds-green-700)",
+        danger: "var(--ds-red-700)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
