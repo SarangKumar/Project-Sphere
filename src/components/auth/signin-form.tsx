@@ -14,8 +14,8 @@ const SignInForm = () => {
     password: "",
   });
 
-  const searchParams = useSearchParams();
-  const error = searchParams.get("error");
+  // const searchParams = useSearchParams();
+  // const error = searchParams.get("error");
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,9 +29,9 @@ const SignInForm = () => {
         callbackUrl: "/dashboard",
       });
 
-      if (!!error) {
-        toast.error("Authentication failed");
-      }
+      // if (!!error) {
+      //   toast.error("Authentication failed");
+      // }
       console.log(resp);
     } catch (error: any) {
       throw new Error(error);
