@@ -1,12 +1,13 @@
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import { prisma } from "@/lib/prisma";
-import { compare } from "bcryptjs";
 import NextAuth, { type NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { getUserByEmail } from "../../utils";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 export const authOptions: NextAuthOptions = {
+  // adapter: PrismaAdapter(prisma),
   session: {
     strategy: "jwt",
   },
