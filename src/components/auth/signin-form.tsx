@@ -4,37 +4,48 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import SubmitButton from "./submit-button";
 import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
+import { SigninSchema } from "@/types/schema";
+import { useRouter } from "next/navigation";
 
 const SignInForm = () => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [userdata, setUserdata] = useState({
     email: "",
     password: "",
   });
 
-  // const searchParams = useSearchParams();
-  // const error = searchParams.get("error");
-
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("submitting");
     try {
       setLoading(true);
-      const resp = await signIn("credentials", {
+
+      const validation = SigninSchema.safeParse(userdata);
+
+      if (!validation.success) {
+        validation.error.errors.forEach((error) => {
+          toast.error(error.message);
+        });
+        setLoading(false);
+        return;
+      }
+
+      const response = await signIn("credentials", {
+        redirect: false,
         email: userdata.email,
         password: userdata.password,
-        redirect: true,
-        callbackUrl: "/dashboard",
       });
 
-      // if (!!error) {
-      //   toast.error("Authentication failed");
-      // }
-      console.log(resp);
+      if (response && !response.error) {
+        toast.success("Login successful");
+        router.push("/dashboard");
+      } else {
+        toast.error(response?.error || "Login failed");
+      }
     } catch (error: any) {
-      throw new Error(error);
+      toast.error("An unexpected error occurred");
+      console.error(error);
     } finally {
       setLoading(false);
     }

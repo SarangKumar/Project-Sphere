@@ -15,7 +15,7 @@ export default function Home() {
       <Navbar />
       <main
         className={cn(
-          "sm:py-18 container relative mx-auto overflow-hidden px-6 py-16 pt-8 md:py-24 md:pt-16 lg:py-24"
+          "sm:py-18 relative mx-auto max-w-screen-2xl overflow-hidden px-6 py-16 pt-8 md:py-24 md:pt-16 lg:py-24"
         )}
       >
         <Hero />

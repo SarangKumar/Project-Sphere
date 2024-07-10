@@ -3,7 +3,7 @@ import GithubProvider from "next-auth/providers/github";
 import { prisma } from "@/lib/prisma";
 import NextAuth, { type NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { getUserByEmail } from "../../utils";
+import { loginWithEmail } from "../../utils";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 export const authOptions: NextAuthOptions = {
@@ -39,8 +39,10 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        const user = await getUserByEmail(credentials.email);
-        console.log(user);
+        const user = await loginWithEmail(
+          credentials.email,
+          credentials.password
+        );
         return user;
       },
     }),

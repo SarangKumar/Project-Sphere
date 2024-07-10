@@ -35,7 +35,7 @@ const SignupForm = () => {
     }
 
     try {
-      const response = await axios.post("/api/v1/sign-up", userdata);
+      const response = await axios.post("/api/v1/auth/sign-up", userdata);
 
       if (response.data.success) {
         toast.success(response.data.message.description);

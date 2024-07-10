@@ -34,6 +34,7 @@ export function ServerResponse(
 export async function loginWithEmail(email?: string, password?: string) {
   if (!email || !password) {
     return null;
+    // return ServerResponse(null, false, "Please provide email and password", { title: "Error", description: "Please provide email and password" }, 400);
   }
   const user = await prisma.user.findUnique({
     where: {
@@ -42,10 +43,13 @@ export async function loginWithEmail(email?: string, password?: string) {
   });
 
   if (!user) return null;
+  //  ServerResponse(null, false, "User not found", { title: "Error", description: "User not found" }, 404);
 
-  const isPasswordValid = await compare(password, user.email);
+  const isPasswordValid = await compare(password, user.password);
 
   if (!isPasswordValid) return null;
+  // ServerResponse(null, false, "Invalid password", { title: "Error", description: "Invalid password" }, 401);
 
   return user;
+  // ServerResponse(user, true, null, { title: "Login successful", description: "User logged in successfully" }, 200);
 }
