@@ -4,6 +4,8 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import SubmitButton from "./submit-button";
 import { signIn } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
+import { toast } from "sonner";
 
 const SignInForm = () => {
   const [loading, setLoading] = useState(false);
@@ -11,6 +13,9 @@ const SignInForm = () => {
     email: "",
     password: "",
   });
+
+  const searchParams = useSearchParams();
+  const error = searchParams.get("error");
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +28,10 @@ const SignInForm = () => {
         redirect: true,
         callbackUrl: "/dashboard",
       });
+
+      if (!!error) {
+        toast.error("Authentication failed");
+      }
       console.log(resp);
     } catch (error: any) {
       throw new Error(error);
@@ -50,6 +59,7 @@ const SignInForm = () => {
           id="email"
           placeholder="example@example.com"
           required
+          autoComplete="email"
           value={userdata.email}
           onChange={handleChange}
           type="email"

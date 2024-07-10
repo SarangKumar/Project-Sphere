@@ -7,6 +7,7 @@ import { AUTH_ROUTES, PROTECTED_ROUTES } from "./lib/routes";
 export default async function middleware(request: NextRequest) {
   // const session = await getServerSession(authOptions);
   // const user = session?.user;
+  //  console.log(user)
 
   // const isProtected = PROTECTED_ROUTES.some((route) =>
   //   request.nextUrl.pathname.startsWith(route)

@@ -49,23 +49,24 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
     session: ({ session, token }) => {
-      console.log("Session Callback", { session, token });
+      // console.log("Session Callback", { session, token });
+      // console.log("return value: ", {...session, id: token.id})
       return {
         ...session,
         user: {
           ...session.user,
-          // id: token.id,
+          id: token.id,
         },
       };
     },
     jwt: ({ token, user }) => {
-      console.log("JWT Callback", { token, user });
+      // console.log("JWT Callback", { token, user });
       if (user) {
         const u = user as unknown as any;
+        console.log(u);
         return {
           ...token,
-          // id: u.id,
-          // randomKey: u.randomKey,
+          id: u.id,
         };
       }
       return token;

@@ -75,17 +75,17 @@ export async function POST(req: NextRequest) {
       )
     );
   } catch (error: any) {
-    if (error instanceof PrismaClientKnownRequestError) {
-      return NextResponse.json(
-        ServerResponse(
-          null,
-          false,
-          "PrismaClientKnownRequestError",
-          { title: "Error", description: "Prisma known error occured" },
-          500
-        )
-      );
-    }
+    // if (error instanceof PrismaClientKnownRequestError) {
+    //   return NextResponse.json(
+    //     ServerResponse(
+    //       null,
+    //       false,
+    //       "PrismaClientKnownRequestError",
+    //       { title: "Error", description: "Prisma known error occured" },
+    //       500
+    //     )
+    //   );
+    // }
 
     return NextResponse.json(
       ServerResponse(
