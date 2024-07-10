@@ -49,7 +49,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="grid h-dvh grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <main className="flex flex-col justify-between gap-12 border border-r p-4 md:px-8 md:py-6">
-        <Logo asLink={true} />
+        <Logo asLink={true} className="h-32 w-32 rounded-xl text-5xl" />
         {children}
       </main>
       <div className="hidden justify-center bg-secondary p-16 md:col-span-1 md:flex lg:col-span-2">
