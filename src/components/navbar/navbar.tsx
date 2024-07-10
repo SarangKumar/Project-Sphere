@@ -26,10 +26,10 @@ const Navbar = async () => {
   return (
     <nav className="border-default relative z-40 border-b backdrop-blur-sm transition-opacity">
       <div className="relative mx-auto flex h-16 items-center justify-between px-4 md:px-6 lg:max-w-screen-1.5xl">
-        <div className="flex items-center gap-x-5">
+        <div className="flex items-center gap-x-3 sm:gap-x-4">
           <Link
             href="/"
-            className="mr-4 flex items-center font-bold text-primary"
+            className="flex items-center font-bold text-primary sm:mr-4"
           >
             <Logo className="mr-2" asLink={false} />
             <span className="hidden md:inline">Project Sphere</span>

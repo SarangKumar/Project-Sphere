@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Project Sphere",
+  shortName: "Sphere",
   githubUsername: "SarangKumar",
   githubRepoName: "Project-Shere",
   url: "http://project-sphere.vercel.app",

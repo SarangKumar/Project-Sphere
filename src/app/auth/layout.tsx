@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="grid h-dvh grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <main className="flex flex-col justify-between gap-12 border border-r p-4 md:px-8 md:py-6">
+      <main className="flex flex-col justify-between gap-12 border border-r p-4 md:px-8">
         <Logo asLink={true} />
         {children}
       </main>

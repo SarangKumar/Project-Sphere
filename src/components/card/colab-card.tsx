@@ -36,7 +36,7 @@ const ColabCard = ({ className }: { className?: string }) => {
           <div className="">
             <Image
               src="/svg/colab-bg.svg"
-              className="absolute -bottom-48 left-8 h-auto opacity-90"
+              className="absolute h-auto w-3/4 opacity-90 md:-bottom-48 md:left-8 md:w-auto"
               height={361}
               width={350}
               alt="colab background"
