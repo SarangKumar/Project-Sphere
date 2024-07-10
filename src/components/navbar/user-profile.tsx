@@ -23,7 +23,7 @@ export const UserProfile = ({
         <span className="sr-only">{name} thumbnail</span>
       </>
       <div className="flex flex-col items-start">
-        <span className="text-xxs">{name || "Guest User"}</span>
+        <span className="text-xxs">{name}</span>
         <span className="text-xxs">{email}</span>
       </div>
     </div>
@@ -39,7 +39,7 @@ export const AvatarHoverCard = ({
   email: string | null | undefined;
   image: string | null | undefined;
 }) => {
-  name = name || "Guest User";
+  name = name || "";
   email = email || "";
   image = image || "";
 

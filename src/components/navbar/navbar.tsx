@@ -18,7 +18,7 @@ const Navbar = async () => {
     );
     githubStars = formatCompactNumber(response.data.stargazers_count);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     githubStars = "-1";
   }
 

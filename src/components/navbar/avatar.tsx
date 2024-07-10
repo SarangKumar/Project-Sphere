@@ -7,7 +7,7 @@ const Avatar = ({ image, name }: { image: string; name: string }) => {
     <>
       {!image ? (
         <span className="flex h-8 w-8 items-center justify-center rounded-full border border-primary/30 bg-secondary/50 text-sm font-medium shadow">
-          {getInitials(name)}
+          {getInitials(name || "Guest")}
         </span>
       ) : (
         <Image

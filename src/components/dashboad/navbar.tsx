@@ -1,12 +1,11 @@
-"use client";
 import React from "react";
 import { AvatarHoverCard } from "../navbar/user-profile";
 import Logo from "../logo";
 import { ChevronRight } from "lucide-react";
-import { useSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
 
-const DashboardNavbar = () => {
-  const { data: session } = useSession();
+const DashboardNavbar = async () => {
+  const session = await getServerSession();
   const user = session?.user;
 
   return (

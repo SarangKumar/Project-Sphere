@@ -9,7 +9,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </main>
       <div className="hidden justify-center bg-secondary p-16 md:col-span-1 md:flex lg:col-span-2">
-        <div className="mx-auto flex max-w-[480px] items-center justify-center text-lg">
+        <div className="mx-auto flex max-w-[480px] items-center justify-center text-sm md:text-base lg:text-lg">
           Project Sphere is a collaborative platform that allows users to create
           and manage projects. Users can sign in, create projects, and share
           them with others through a link. The platform also integrates Stripe

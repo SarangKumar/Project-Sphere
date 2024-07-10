@@ -5,28 +5,49 @@ import { Label } from "../ui/label";
 import axios from "axios";
 import SubmitButton from "./submit-button";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { SignupSchema } from "@/types/schema";
 
 const SignupForm = () => {
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
   const [userdata, setUserdata] = useState({
     name: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+
+    const validation = SignupSchema.safeParse(userdata);
+    console.log(validation);
+
+    if (!validation.success) {
+      validation.error.errors.forEach((error) => {
+        toast.error(error.message);
+      });
+      setLoading(false);
+      return;
+    }
 
     try {
-      const response = await axios.post("/api/auth/auth/sign-up", userdata);
-      console.log(response.data);
-      console.log(response.data);
+      const response = await axios.post("/api/v1/sign-up", userdata);
 
-      toast(response.data.message.title, {
-        description: response.data.message.description,
-      });
+      if (response.data.success) {
+        toast.success(response.data.message.description);
+        router.push("/auth/sign-in");
+      } else {
+        toast.error(response.data.message.description);
+      }
     } catch (error: any) {
-      console.log(error);
+      console.log(error.message);
       throw new Error(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -40,16 +61,17 @@ const SignupForm = () => {
   return (
     <form onSubmit={handleSignup} className="my-6 space-y-4">
       <div className="space-y-1">
-        <Label htmlFor="email" className="font-normal">
+        <Label htmlFor="name" className="font-normal">
           Username
         </Label>
         <Input
           className="text-xs text-secondary-foreground"
           name="name"
-          id="name"
+          id="username"
           placeholder="Alice Doe"
           required
           value={userdata.name}
+          autoComplete="username"
           onChange={handleChange}
           type="text"
         />
@@ -77,7 +99,7 @@ const SignupForm = () => {
         </Label>
         <Input
           name="password"
-          required
+          // required
           id="password"
           autoComplete="current-password"
           placeholder="••••••••"
@@ -86,8 +108,26 @@ const SignupForm = () => {
           value={userdata.password}
         />
       </div>
+
+      <div className="space-y-1">
+        <Label htmlFor="confirm-password" className="font-normal">
+          Confirm Password
+        </Label>
+        <Input
+          name="confirmPassword"
+          required
+          id="password"
+          autoComplete="current-password"
+          placeholder="••••••••"
+          type="password"
+          onChange={handleChange}
+          value={userdata.confirmPassword}
+        />
+      </div>
       <div className="space-y-1 py-3">
-        <SubmitButton className="h-9 w-full">Sign Up</SubmitButton>
+        <SubmitButton loading={loading} className="h-9 w-full">
+          Sign Up
+        </SubmitButton>
       </div>
     </form>
   );

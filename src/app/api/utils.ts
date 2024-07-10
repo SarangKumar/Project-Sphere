@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { compare } from "bcryptjs";
 
 export const getUserByEmail = async (email: string) => {
   try {
@@ -28,4 +29,23 @@ export function ServerResponse(
     message,
     status,
   };
+}
+
+export async function loginWithEmail(email?: string, password?: string) {
+  if (!email || !password) {
+    return null;
+  }
+  const user = await prisma.user.findUnique({
+    where: {
+      email: email.toLowerCase(),
+    },
+  });
+
+  if (!user) return null;
+
+  const isPasswordValid = await compare(password, user.email);
+
+  if (!isPasswordValid) return null;
+
+  return user;
 }

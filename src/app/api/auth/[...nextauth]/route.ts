@@ -1,3 +1,3 @@
-import { handlers } from "./options";
+import { handler } from "./options";
 
-export { handlers as GET, handlers as POST };
+export { handler as GET, handler as POST };

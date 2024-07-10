@@ -17,7 +17,6 @@ const TestPage = () => {
 
     try {
       const response = await axios.post("/api/v1/scrape", { url });
-      console.log(response.data);
       setResult(response.data.data);
     } catch (error: any) {
       console.log(error.message);

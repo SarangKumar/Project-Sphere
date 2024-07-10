@@ -1,8 +1,6 @@
 import SignupForm from "@/components/auth/signup-form";
 import { SignInButton } from "@/components/auth/auth-button";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { GithubIcon } from "lucide-react";
 import Link from "next/link";
@@ -51,7 +49,7 @@ const SignUpPage = () => {
           </SignInButton>
         </div>
 
-        {/* <div className="relative text-center text-xs">
+        <div className="relative text-center text-xs">
           <span className="z-10 bg-background px-1">or</span>
           <span className="absolute -z-10 flex w-full -translate-y-2 items-center border-b" />
         </div>
@@ -62,11 +60,11 @@ const SignUpPage = () => {
           Have an account ?
           <Link
             className={cn(buttonVariants({ variant: "link" }))}
-            href="/sign-in"
+            href="/auth/sign-in"
           >
             Sign In Now
           </Link>
-        </p> */}
+        </p>
       </main>
       <div className="mx-auto w-full px-6 sm:max-w-screen-sm">
         <p className="text-balance text-center text-xs text-muted-foreground">

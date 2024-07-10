@@ -1,23 +1,27 @@
+import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { authOptions } from "./app/api/auth/[...nextauth]/options";
+import { AUTH_ROUTES, PROTECTED_ROUTES } from "./lib/routes";
 
 export default async function middleware(request: NextRequest) {
-  // const session = await auth();
+  // const session = await getServerSession(authOptions);
+  // const user = session?.user;
 
-  // const isProtected = protectedRoutes.some((route) =>
+  // const isProtected = PROTECTED_ROUTES.some((route) =>
   //   request.nextUrl.pathname.startsWith(route)
   // );
 
-  // const isAuth = authRoutes.some((route) =>
+  // const isAuth = AUTH_ROUTES.some((route) =>
   //   request.nextUrl.pathname.startsWith(route)
   // );
 
-  // if (!session && isProtected) {
+  // if (!user && isProtected) {
   //   const absoluteURL = new URL("/", request.nextUrl.origin);
   //   return NextResponse.redirect(absoluteURL.toString());
   // }
 
-  // if (session && isAuth) {
+  // if (user && isAuth) {
   //   const absoluteURL = new URL("/dashboard", request.nextUrl.origin);
   //   return NextResponse.redirect(absoluteURL.toString());
   // }
