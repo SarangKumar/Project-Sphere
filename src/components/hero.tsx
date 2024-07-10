@@ -13,7 +13,7 @@ const Hero = () => {
             Conquer Projects with Ease!
           </span>
         </h1>
-        <p className="mx-auto my-3 max-w-lg text-balance pt-2 text-center text-sm text-foreground sm:mt-5 sm:text-base lg:mb-0">
+        <p className="mx-auto my-3 max-w-xl text-balance pt-2 text-center text-sm text-foreground sm:mt-5 sm:text-base lg:mb-0">
           {/* Project Sphere is open source
           <br /> */}
           Ultimate tool for team collaboration and workflow efficiency, perfect

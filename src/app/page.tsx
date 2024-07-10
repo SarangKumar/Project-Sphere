@@ -8,6 +8,7 @@ import TaskManagementCard from "@/components/card/task-management-card";
 import ColabCard from "@/components/card/colab-card";
 import WebScrapeCard from "@/components/card/web-scrape-card";
 import AuthenticationCard from "@/components/card/authentication-card";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <Navbar />
       <main
         className={cn(
-          "sm:py-18 relative mx-auto max-w-screen-2xl overflow-hidden px-6 py-16 pt-8 md:py-24 md:pt-16 lg:py-24"
+          "sm:py-18 relative mx-auto max-w-screen-1.5xl overflow-hidden px-6 py-16 pt-8 md:py-24 md:pt-16 lg:py-24"
         )}
       >
         <Hero />
@@ -33,6 +34,7 @@ export default function Home() {
           <WebScrapeCard />
         </div>
       </main>
+      <Footer />
     </>
   );
 }

@@ -19,6 +19,9 @@ const config = {
       },
     },
     extend: {
+      maxWidth: {
+        "screen-1.5xl": "1408px",
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },

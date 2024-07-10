@@ -6,6 +6,20 @@ import {
 } from "@/components/ui/resizable";
 import DashboardSidebar from "@/components/dashboad/sidebar";
 import DashboardNavbar from "@/components/dashboad/navbar";
+import { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+
+export const metadata: Metadata = {
+  title: {
+    template: `%s | Dashboard | ${siteConfig.name}`,
+    default: `Dashboard | ${siteConfig.name}`,
+  },
+  description:
+    "Explore your projects and manage them efficiently on Project Sphere's dashboard. Collaborate with your team seamlessly.",
+  alternates: {
+    canonical: `${siteConfig.url}/dashboard`,
+  },
+};
 
 const DashboardLayout = ({
   children,

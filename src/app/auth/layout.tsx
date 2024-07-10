@@ -1,5 +1,49 @@
 import Logo from "@/components/logo";
+import { siteConfig } from "@/config/site";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: {
+    template: `%s | Authentication | ${siteConfig.name}`,
+    default: `Authentication | ${siteConfig.name}`,
+  },
+  description:
+    "Sign in or sign up securely on Project Sphere. Manage your account and access your projects with ease.",
+  openGraph: {
+    title: `Authentication | ${siteConfig.name}`,
+    description:
+      "Sign in or sign up securely on Project Sphere. Manage your account and access your projects with ease.",
+    url: `${siteConfig.url}/authentication`,
+    siteName: "Project Sphere",
+    images: [
+      {
+        url: "https://projectsphere.com/authentication-og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Project Sphere - Authentication",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Authentication | ${siteConfig.name}`,
+    description:
+      "Sign in or sign up securely on Project Sphere. Manage your account and access your projects with ease.",
+    site: "",
+    creator: "Sarang Kumar",
+    images: [
+      {
+        url: "https://projectsphere.com/authentication-twitter-image.jpg",
+        alt: `${siteConfig.name} - Authentication`,
+      },
+    ],
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/authentication`,
+  },
+};
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (

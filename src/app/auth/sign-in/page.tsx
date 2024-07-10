@@ -1,12 +1,15 @@
 import SignInForm from "@/components/auth/signin-form";
 import { SignInButton } from "@/components/auth/auth-button";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { GithubIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sign in",
+};
 
 const SignInPage = () => {
   return (

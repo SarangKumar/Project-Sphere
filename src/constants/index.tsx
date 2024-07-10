@@ -1,6 +1,6 @@
 import { Folder, LayoutDashboard, Settings } from "lucide-react";
 
-export const navLinks = [
+export const dashboardSidebarLinks = [
   {
     title: "Dashboard",
     icon: (
@@ -18,4 +18,19 @@ export const navLinks = [
     icon: <Settings size={24} className="size-5 shrink-0 @[60px]:size-5" />,
     href: "/dashboard/settings",
   },
+];
+
+export const navLinks = [
+  {
+    title: "Docs",
+    href: "/docs",
+  },
+  {
+    title: "Projects",
+    href: "/dashboard/project",
+  },
+  // {
+  //   title: "Settings",
+  //   href: "/dashboard/settings",
+  // },
 ];

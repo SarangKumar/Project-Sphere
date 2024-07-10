@@ -6,7 +6,6 @@ import { siteConfig } from "@/config/site";
 import { TailwindIndicator } from "@/components/dev/tailwind-indicator";
 import Providers from "@/components/providers";
 import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/sonner";
 

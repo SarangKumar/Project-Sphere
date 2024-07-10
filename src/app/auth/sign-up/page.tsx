@@ -5,6 +5,11 @@ import { cn } from "@/lib/utils";
 import { GithubIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sign up",
+};
 
 const SignUpPage = () => {
   return (
