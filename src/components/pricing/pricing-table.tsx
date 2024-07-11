@@ -102,7 +102,7 @@ const TableRowTooTip = ({
   description?: string;
 }) => {
   return (
-    <td className="flex items-center gap-x-2 whitespace-nowrap p-4 pr-12">
+    <td className="flex items-center gap-x-2 p-4 lg:whitespace-nowrap lg:pr-12">
       <span className="text-sm">{title}</span>
       {description && (
         <Tooltip>

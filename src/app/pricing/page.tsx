@@ -28,7 +28,7 @@ const PricingPage = () => {
         )}
       >
         <header className="mb-16 mt-8 flex flex-col items-center justify-center space-y-2">
-          <h1 className="text-balance text-2xl font-medium md:text-3xl">
+          <h1 className="text-balance text-center text-2xl font-medium md:text-3xl">
             Pricing Plans
           </h1>
           <p className="max-w-screen-md text-balance text-center text-base text-secondary-foreground md:text-lg">
@@ -43,7 +43,7 @@ const PricingPage = () => {
         </main>
 
         <div className="my-16 flex flex-col items-center justify-center space-y-2">
-          <h2 className="text-balance text-2xl font-medium md:text-3xl">
+          <h2 className="text-balance text-center text-2xl font-medium md:text-3xl">
             Find the Perfect Plan for Your Needs
           </h2>
           <p className="max-w-screen-md text-balance text-center text-base text-secondary-foreground md:text-lg">
@@ -62,7 +62,7 @@ const PricingPage = () => {
       </div>
 
       <section className="cta-section">
-        <h2>Get Started Today</h2>
+        <h2 className="text-center">Get Started Today</h2>
         <p>
           Whether you&apos;re a small team just getting started or an enterprise
           looking for advanced project management solutions, Project Sphere has
