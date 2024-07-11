@@ -9,6 +9,7 @@ import ColabCard from "@/components/card/colab-card";
 import WebScrapeCard from "@/components/card/web-scrape-card";
 import AuthenticationCard from "@/components/card/authentication-card";
 import { Footer } from "@/components/footer";
+import AiAssistantCard from "@/components/card/ai-assistant-card";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
           <AuthenticationCard />
           <ColabCard />
           <WebScrapeCard />
+          <AiAssistantCard />
         </div>
       </main>
       <Footer />

@@ -1,4 +1,4 @@
-import { pricingFeatures, pricingPlans } from "@/constants";
+import { Plans, pricingFeatures, pricingPlans } from "@/constants";
 import React from "react";
 import {
   Tooltip,
@@ -12,14 +12,14 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { GeistMono } from "geist/font/mono";
 
-const PricingTablePlanMd = () => {
+export const PricingTablePlanLg = () => {
   return (
-    <table className="mb-16 mt-24">
+    <table className="mb-16 mt-24 hidden table-auto lg:block">
       <thead className="">
         <tr className="">
           <th className="invisible"></th>
           {pricingPlans.map((plan) => (
-            <TableHead key={plan.name} {...plan} />
+            <TableHead key={plan.name} {...plan} className="" />
           ))}
         </tr>
       </thead>
@@ -50,7 +50,49 @@ const PricingTablePlanMd = () => {
   );
 };
 
-export default PricingTablePlanMd;
+export const PricingTablePlanSm = () => {
+  return (
+    <div className="mx-auto mb-16 mt-24 max-w-screen-md space-y-12 lg:hidden">
+      <PricingTablePlansCol plan="free" />
+      <PricingTablePlansCol plan="gold" />
+      <PricingTablePlansCol plan="platinum" />
+    </div>
+  );
+};
+export const PricingTablePlansCol = ({ plan }: { plan: Plans }) => {
+  const selectedPlan = pricingPlans.find(
+    (p) => p.name.toLowerCase() === plan.toLowerCase()
+  );
+
+  if (selectedPlan) {
+    return (
+      <table className="">
+        <thead>
+          <tr>
+            <TableHead {...selectedPlan} colSpan={2} className="w-full" />
+          </tr>
+        </thead>
+        <tbody>
+          {pricingFeatures.map((feature, index) => (
+            <tr key={index} className="border-t">
+              <TableTd
+                head
+                title={feature.feature.title}
+                description={feature.feature.description}
+              />
+              <TableTd
+                title={feature[plan].title}
+                description={feature[plan].description}
+              />
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  } else {
+    return <>Plan not found</>;
+  }
+};
 
 const TableRowTooTip = ({
   title,
@@ -80,10 +122,15 @@ export const TableHead = ({
   name,
   price,
   isPopular,
+  colSpan,
   link,
-}: PricingCardProps) => {
+  className,
+}: PricingCardProps & { colSpan?: number; className?: string }) => {
   return (
-    <th className="gap-y-1 bg-local p-4 text-left">
+    <th
+      colSpan={colSpan}
+      className={cn("gap-y-1 bg-local p-4 text-left", className)}
+    >
       <h3
         className={cn(
           GeistMono.className,

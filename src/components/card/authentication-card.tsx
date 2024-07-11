@@ -19,7 +19,7 @@ const AuthenticationCard = ({ className }: { className?: string }) => {
               <LockKeyhole className="stroke-primary stroke-[1.8]" />
             </span>
             <h3 className="text-center text-lg font-medium text-foreground lg:text-left">
-              Authentication
+              Secure Authentication
             </h3>
             <p className="text-balance text-center text-sm text-secondary-foreground lg:text-left">
               Ensure secure access to your projects with robust authentication.

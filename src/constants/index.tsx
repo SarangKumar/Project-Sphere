@@ -149,6 +149,8 @@ export interface PricingFeature {
   platinum: { title: string; description: string };
 }
 
+export type Plans = "free" | "gold" | "platinum";
+
 export const pricingFeatures: PricingFeature[] = [
   {
     feature: { title: "Projects", description: "Projects" },

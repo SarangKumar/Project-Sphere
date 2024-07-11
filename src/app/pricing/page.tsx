@@ -1,7 +1,10 @@
 import { Footer } from "@/components/footer";
 import Navbar from "@/components/navbar/navbar";
 import PricingCard from "@/components/pricing/pricing-card";
-import PricingTablePlanMd from "@/components/pricing/pricing-table";
+import {
+  PricingTablePlanLg,
+  PricingTablePlanSm,
+} from "@/components/pricing/pricing-table";
 import { pricingPlans } from "@/constants";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
@@ -39,7 +42,8 @@ const PricingPage = () => {
           ))}
         </main>
 
-        <PricingTablePlanMd />
+        <PricingTablePlanLg />
+        <PricingTablePlanSm />
       </div>
       <Footer />
     </>
