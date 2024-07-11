@@ -102,15 +102,15 @@ const TableRowTooTip = ({
   description?: string;
 }) => {
   return (
-    <td className="flex items-center gap-x-2 p-4">
+    <td className="flex items-center gap-x-2 whitespace-nowrap p-4 pr-12">
       <span className="text-sm">{title}</span>
       {description && (
         <Tooltip>
           <TooltipTrigger asChild>
             <Info className="text-secondary-foreground" size={14} />
           </TooltipTrigger>
-          <TooltipContent>
-            <p>{title}</p>
+          <TooltipContent className="">
+            <p className="">{title}</p>
           </TooltipContent>
         </Tooltip>
       )}
@@ -132,12 +132,9 @@ export const TableHead = ({
       className={cn("gap-y-1 bg-local p-4 text-left", className)}
     >
       <h3
-        className={cn(
-          GeistMono.className,
-          "flex flex-col items-center gap-2 md:flex-row"
-        )}
+        className={cn(GeistMono.className, "flex flex-row items-center gap-2")}
       >
-        <span className="text-lg font-semibold uppercase">{name}</span>
+        <span className="text-xl font-semibold uppercase">{name}</span>
         <p className="my-2 text-sm text-secondary-foreground">
           <span className={cn(GeistMono.className, "text-lg")}>${price}</span>/
           month

@@ -153,7 +153,11 @@ export type Plans = "free" | "gold" | "platinum";
 
 export const pricingFeatures: PricingFeature[] = [
   {
-    feature: { title: "Projects", description: "Projects" },
+    feature: {
+      title: "Projects",
+      description:
+        "Create and manage multiple projects with ease. Organize your work and track progress within each project.",
+    },
     free: {
       title: "Up to 3",
       description: "Manage a few projects with ease using our basic tools.",
@@ -169,7 +173,11 @@ export const pricingFeatures: PricingFeature[] = [
     },
   },
   {
-    feature: { title: "Task Management", description: "" },
+    feature: {
+      title: "Task Management",
+      description:
+        "Keep track of your to-do lists, deadlines, and progress with robust task management tools. Assign, prioritize, and monitor tasks seamlessly.",
+    },
     free: {
       title: "Basic",
       description: "Track tasks with simple, effective tools.",
@@ -184,7 +192,11 @@ export const pricingFeatures: PricingFeature[] = [
     },
   },
   {
-    feature: { title: "AI Support", description: "" },
+    feature: {
+      title: "AI Support",
+      description:
+        "Leverage advanced AI capabilities to assist with brainstorming, generating content, providing insights, and automating tasks for improved productivity.",
+    },
     free: {
       title: "Standard",
       description: "Receive AI assistance for standard project tasks.",
@@ -200,7 +212,11 @@ export const pricingFeatures: PricingFeature[] = [
     },
   },
   {
-    feature: { title: "Secure Project Sharing", description: "" },
+    feature: {
+      title: "Secure Project Sharing",
+      description:
+        "Share your projects securely with others via links with expiration dates, ensuring your data remains protected.",
+    },
     free: {
       title: "Limited link expiration",
       description:
@@ -217,7 +233,11 @@ export const pricingFeatures: PricingFeature[] = [
     },
   },
   {
-    feature: { title: "Collaboration Tools", description: "" },
+    feature: {
+      title: "Collaboration Tools",
+      description:
+        "Enhance team collaboration with tools designed for seamless communication and coordination. Work together in real-time, no matter where you are.",
+    },
     free: {
       title: "Basic",
       description: "Collaborate with team members using basic tools.",
@@ -233,7 +253,11 @@ export const pricingFeatures: PricingFeature[] = [
     },
   },
   {
-    feature: { title: "Templates and Themes", description: "" },
+    feature: {
+      title: "Templates and Themes",
+      description:
+        "Customize your projects with a variety of templates and themes to suit your style and needs.",
+    },
     free: { title: "-", description: "" },
     gold: {
       title: "Premium",
@@ -246,7 +270,11 @@ export const pricingFeatures: PricingFeature[] = [
     },
   },
   {
-    feature: { title: "Analytics and Reporting", description: "" },
+    feature: {
+      title: "Analytics and Reporting",
+      description:
+        "Gain insights into your projects with detailed analytics. Track performance, monitor progress, and make data-driven decisions.",
+    },
     free: { title: "-", description: "" },
     gold: {
       title: "Basic",
@@ -259,7 +287,11 @@ export const pricingFeatures: PricingFeature[] = [
     },
   },
   {
-    feature: { title: "Workflow Customization", description: "" },
+    feature: {
+      title: "Workflow Customization",
+      description:
+        "Tailor your workflow to fit your unique needs. Customize processes, set up automation, and streamline your tasks for efficiency.",
+    },
     free: { title: "-", description: "" },
     gold: {
       title: "Basic",
@@ -271,7 +303,11 @@ export const pricingFeatures: PricingFeature[] = [
     },
   },
   {
-    feature: { title: "Security and Compliance", description: "" },
+    feature: {
+      title: "Security and Compliance",
+      description:
+        "Ensure your data is secure with top-notch security measures. Your information is protected with industry-standard encryption and security protocols.",
+    },
     free: {
       title: "Standard",
       description:
@@ -298,7 +334,11 @@ export const pricingFeatures: PricingFeature[] = [
     },
   },
   {
-    feature: { title: "Support", description: "" },
+    feature: {
+      title: "Support",
+      description:
+        "Access dedicated support to assist you with any issues or questions. Our support team is here to help you succeed.",
+    },
     free: {
       title: "Community",
       description: "Get help from the community support forum.",
@@ -313,7 +353,11 @@ export const pricingFeatures: PricingFeature[] = [
     },
   },
   {
-    feature: { title: "Onboarding Assistance", description: "" },
+    feature: {
+      title: "Onboarding Assistance",
+      description:
+        "Get started quickly with easy onboard access. Our intuitive interface and guided setup ensure you can start using the platform immediately.",
+    },
     free: { title: "-", description: "" },
     gold: { title: "-", description: "" },
     platinum: {
@@ -321,5 +365,23 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Get assistance with onboarding to help you get started quickly.",
     },
+  },
+];
+
+export const pricingFaq = [
+  {
+    question: "What is included in the Free plan?",
+    answer:
+      "The Free plan includes basic project management features such as the ability to create up to 3 projects, basic task management, standard AI assistance, secure project sharing with limited link expiration, and basic collaboration tools.",
+  },
+  {
+    question: "Can I upgrade my plan later?",
+    answer:
+      "Yes, you can upgrade your plan at any time to access additional features and tools that better meet your needs.",
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer:
+      " We accept all major credit cards. For enterprise customers, we also offer invoicing options.",
   },
 ];
