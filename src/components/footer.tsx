@@ -14,7 +14,8 @@ export function Footer() {
           >
             Sarang
           </a>{" "}
-          with lots of effort, debugging skills and{" "}
+          with lots of effort, debugging skills
+          {/* and{" "}
           <a
             href="https://chatgpt.com"
             target="_blank"
@@ -22,7 +23,7 @@ export function Footer() {
             className="font-medium underline underline-offset-4"
           >
             ChatGPT
-          </a>
+          </a> */}
           .
         </p>
       </div>

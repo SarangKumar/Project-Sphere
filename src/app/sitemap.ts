@@ -35,7 +35,7 @@ export default async function sitemap() {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/soon`,
+      url: `${baseUrl}/pricing`,
       lastModified: new Date(),
     },
     {

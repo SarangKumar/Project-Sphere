@@ -59,7 +59,7 @@ const ColabCard = ({ className }: { className?: string }) => {
               className="fill-primary/80 stroke-primary stroke-[0.8]"
             />
             <span className="relative -top-4 left-6 rounded-full border border-border bg-background px-2 py-0.5 text-xxs">
-              Aditi
+              User 2
             </span>
           </span>
         </div>
