@@ -97,7 +97,7 @@ export const pricingPlans: PricingCardProps[] = [
         description: "Use exclusive templates and themes for your projects.",
       },
     ],
-    link: "/",
+    link: "https://buy.stripe.com/test_aEUg0K14LcTOfcI001",
   },
   {
     name: "Platinum",
@@ -139,7 +139,7 @@ export const pricingPlans: PricingCardProps[] = [
           "Receive personalized assistance from a dedicated account manager.",
       },
     ],
-    link: "",
+    link: "https://buy.stripe.com/test_dR69Cm8xd1b6ggM5kk",
   },
 ];
 export interface PricingFeature {

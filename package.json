@@ -60,6 +60,7 @@
     "react-hook-form": "^7.52.1",
     "react-resizable-panels": "^2.0.20",
     "sonner": "^1.5.0",
+    "stripe": "^16.2.0",
     "tailwind-merge": "^2.3.0",
     "tech-stack-icons": "^2.0.3",
     "ts-node": "^10.9.2",

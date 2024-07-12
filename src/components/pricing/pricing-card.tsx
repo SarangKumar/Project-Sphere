@@ -53,9 +53,9 @@ const PricingCard = ({
       <p className="text-sm font-medium text-secondary-foreground">
         {description}
       </p>
-      <Link href={link} className={cn(buttonVariants({ size: "lg" }))}>
+      <a href={link} className={cn(buttonVariants({ size: "lg" }))}>
         Get Started
-      </Link>
+      </a>
       <p className="my-2 text-xxs text-secondary-foreground">
         <span className={cn(GeistMono.className, "text-3xl text-foreground")}>
           ₹{price}
