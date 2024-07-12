@@ -61,7 +61,7 @@ const PricingPage = () => {
         <Faq />
       </div>
 
-      <section className="cta-section">
+      {/* <section className="cta-section">
         <h2 className="text-center">Get Started Today</h2>
         <p>
           Whether you&apos;re a small team just getting started or an enterprise
@@ -72,7 +72,7 @@ const PricingPage = () => {
         <a href="/signup" className="cta-button">
           Sign Up Now
         </a>
-      </section>
+      </section> */}
 
       <Footer />
     </>

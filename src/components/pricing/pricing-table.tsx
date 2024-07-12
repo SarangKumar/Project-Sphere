@@ -16,10 +16,14 @@ export const PricingTablePlanLg = () => {
   return (
     <table className="mb-16 mt-24 hidden table-auto lg:block">
       <thead className="">
-        <tr className="">
+        <tr className="relative">
           <th className="invisible"></th>
           {pricingPlans.map((plan) => (
-            <TableHead key={plan.name} {...plan} className="" />
+            <TableHead
+              key={plan.name}
+              {...plan}
+              className="sticky left-0 top-0"
+            />
           ))}
         </tr>
       </thead>
@@ -68,8 +72,12 @@ export const PricingTablePlansCol = ({ plan }: { plan: Plans }) => {
     return (
       <table className="">
         <thead>
-          <tr>
-            <TableHead {...selectedPlan} colSpan={2} className="w-full" />
+          <tr className="relative">
+            <TableHead
+              {...selectedPlan}
+              colSpan={2}
+              className="sticky top-0 w-full"
+            />
           </tr>
         </thead>
         <tbody>
@@ -102,12 +110,15 @@ const TableRowTooTip = ({
   description?: string;
 }) => {
   return (
-    <td className="flex items-center gap-x-2 p-4 lg:whitespace-nowrap lg:pr-12">
-      <span className="text-sm">{title}</span>
+    <td className="px-4 lg:whitespace-nowrap lg:pr-12">
+      <span className="xs:text-sm text-xs">{title}</span>
       {description && (
         <Tooltip>
           <TooltipTrigger asChild>
-            <Info className="text-secondary-foreground" size={14} />
+            <Info
+              className="ml-2 inline shrink-0 text-secondary-foreground"
+              size={14}
+            />
           </TooltipTrigger>
           <TooltipContent className="">
             <p className="">{title}</p>
@@ -129,7 +140,7 @@ export const TableHead = ({
   return (
     <th
       colSpan={colSpan}
-      className={cn("gap-y-1 bg-local p-4 text-left", className)}
+      className={cn("sticky top-0 gap-y-1 p-4 text-left", className)}
     >
       <h3
         className={cn(GeistMono.className, "flex flex-row items-center gap-2")}
@@ -164,13 +175,16 @@ export const TableTd = ({
   } else if (title === "-") {
     return (
       <td className="p-4">
-        <CircleMinus className="text-secondary-foreground/80" size={16} />
+        <CircleMinus
+          className="shrink-0 text-secondary-foreground/80"
+          size={16}
+        />
       </td>
     );
   } else if (title.toLowerCase() === "yes") {
     return (
       <td className="p-4">
-        <CircleCheck className="text-primary" size={16} />
+        <CircleCheck className="shrink-0 text-primary" size={16} />
       </td>
     );
   } else {
