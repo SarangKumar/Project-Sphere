@@ -66,7 +66,7 @@ export const pricingPlans: PricingCardProps[] = [
   {
     name: "Gold",
     description: "Advanced Features for Growing Teams",
-    price: 19.99,
+    price: 299.99,
     isPopular: true,
     footerText: "Most Popular",
     pricingHeader: "Includes everything in Free, plus:",
@@ -103,7 +103,7 @@ export const pricingPlans: PricingCardProps[] = [
     name: "Platinum",
     description: "Comprehensive Tools for Professionals",
     pricingHeader: "Includes everything in Gold, plus: ",
-    price: 49.99,
+    price: 499.99,
     features: [
       {
         title: "All features from the Gold Plan",
@@ -139,7 +139,7 @@ export const pricingPlans: PricingCardProps[] = [
           "Receive personalized assistance from a dedicated account manager.",
       },
     ],
-    link: "/",
+    link: "",
   },
 ];
 export interface PricingFeature {

@@ -58,7 +58,7 @@ const PricingCard = ({
       </Link>
       <p className="my-2 text-xxs text-secondary-foreground">
         <span className={cn(GeistMono.className, "text-3xl text-foreground")}>
-          ${price}
+          ₹{price}
         </span>{" "}
         / month
       </p>

@@ -147,7 +147,7 @@ export const TableHead = ({
       >
         <span className="text-xl font-semibold uppercase">{name}</span>
         <p className="my-2 text-sm text-secondary-foreground">
-          <span className={cn(GeistMono.className, "text-lg")}>${price}</span>/
+          <span className={cn(GeistMono.className, "text-lg")}>₹{price}</span>/
           month
         </p>
       </h3>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "668e9275812ee0a34e3341b3",
+    "email": "sarang@gmail.com",
+    "password": "$2a$10$J.UGhvU68FYU7sDWnmE/PebJz8tPoxkNMHaAga0HgYVvOOk6nwiF2",
+    "name": "sarang",
+    "image": null,
+    "subscriptions": "FREE",
+    "isVerified": false,
+    "forgotPasswordToken": null,
+    "forgotPasswordTokenExpiry": null,
+    "verifyToken": null,
+    "verifyTokenExpiry": null,
+    "createdAt": "2024-07-10T13:53:57.203Z",
+    "updatedAt": "2024-07-10T13:53:57.203Z"
+  },
+  {
+    "id": "668e9275812ee0a34e3341b4",
+    "email": "john.doe@gmail.com",
+    "password": "$2a$10$abcdefg1234567",
+    "name": "John Doe",
+    "image": null,
+    "subscriptions": "GOLD",
+    "isVerified": true,
+    "forgotPasswordToken": null,
+    "forgotPasswordTokenExpiry": null,
+    "verifyToken": null,
+    "verifyTokenExpiry": null,
+    "createdAt": "2024-07-11T13:53:57.203Z",
+    "updatedAt": "2024-07-11T13:53:57.203Z"
+  }
+]

@@ -7,12 +7,46 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  OWNER
+  COLLABORATOR
+  VIEWER
+  ADMIN
+}
+
+enum SubscriptionTier {
+  FREE
+  GOLD
+  PLATINUM
+}
+
 model User {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
-  email    String  @unique
-  password String
-  name     String
-  image    String?
+  id            String           @id @default(auto()) @map("_id") @db.ObjectId
+  email         String           @unique
+  name          String
+  password      String
+  image         String?
+  projects      Project[]
+  subscriptions SubscriptionTier @default(FREE)
+  isVerified    Boolean          @default(false)
+
+  forgotPasswordToken       String?
+  forgotPasswordTokenExpiry DateTime?
+  verifyToken               String?
+  verifyTokenExpiry         DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String?
+  ownerId     String  @db.ObjectId
+  owner       User    @relation(fields: [ownerId], references: [id])
+  // collaborators Collaborator[]
+  // shareableLink ShareableLink?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

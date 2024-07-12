@@ -2,12 +2,14 @@
   "name": "project-sphere",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "npx prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
+    "seed": "node src/scripts/seed.js",
     "format": "npx prettier . --write  --ignore-unknown"
   },
   "dependencies": {
@@ -38,6 +40,7 @@
     "bcryptjs": "^2.4.3",
     "boring-avatar": "^1.7.0",
     "boring-avatars": "^1.10.2",
+    "chalk": "^5.3.0",
     "cheerio": "^1.0.0-rc.12",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -59,6 +62,7 @@
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.3.0",
     "tech-stack-icons": "^2.0.3",
+    "ts-node": "^10.9.2",
     "vaul": "^0.9.1",
     "zod": "^3.23.8"
   },
