@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import chalk from "chalk";
 import usersData from "./user.json" assert { type: "json" };
 import projectsData from "./project.json" assert { type: "json" };
+import tasksData from "./task.json" assert { type: "json" };
 
 const prisma = new PrismaClient();
 
@@ -19,11 +20,17 @@ const load = async () => {
       await prisma.user.deleteMany();
       console.log("✓" + " [2/4] " + chalk.red("Deleted user records"));
 
+      await prisma.task.deleteMany();
+      console.log("✓" + " [2/4] " + chalk.red("Deleted task records"));
+
       await prisma.user.createMany({ data: usersData });
       console.log("✓" + " [3/4] " + chalk.green("Added new user data"));
 
       await prisma.project.createMany({ data: projectsData });
       console.log("✓" + " [4/4] " + chalk.green("Added new project data"));
+
+      await prisma.task.createMany({ data: tasksData });
+      console.log("✓" + " [4/4] " + chalk.green("Added new task data"));
 
       console.log(chalk.yellow("\n✨✨ Seeded data successfully"));
     } catch (e) {

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "64b9f5d3e6e5f12345678903",
+    "title": "Initial Setup",
+    "description": "Set up the initial project structure with Next.js and TypeScript",
+    "isCompleted": true,
+    "projectId": "668e9275812ee0a34e3341c1",
+    "createdAt": "2024-07-12T14:00:00.000Z",
+    "updatedAt": "2024-07-12T14:00:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678904",
+    "title": "Add Authentication",
+    "description": "Implement authentication using NextAuth",
+    "isCompleted": false,
+    "projectId": "668e9275812ee0a34e3341c1",
+    "createdAt": "2024-07-12T14:10:00.000Z",
+    "updatedAt": "2024-07-12T14:10:00.000Z"
+  }
+]

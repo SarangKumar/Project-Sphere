@@ -1,5 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { compare } from "bcryptjs";
+import { getServerSession, Session } from "next-auth";
+import { authOptions } from "./auth/[...nextauth]/options";
 
 export const getUserByEmail = async (email: string) => {
   try {
@@ -15,29 +17,26 @@ export const getUserByEmail = async (email: string) => {
   }
 };
 
-// export async function getUserById(userId: string) {
-//   try {
-//     const user = await prisma.user.findUnique({
-//       where: {
-//         id: userId,
-//       },
-//     });
-//     if (!user) {
-//       throw new Error("User not found");
-//     }
-//     return user;
-//   } catch (error) {
-//     console.error("Error retrieving user:", error);
-//     throw error;
-//   }
-// }
-
-export async function getUserById(userId: string) {
+export async function getUserBySession({
+  project = false,
+}: {
+  project?: boolean;
+}) {
+  const session = await getServerSession(authOptions);
+  if (!session || !session.user) {
+    return null;
+  }
   const user = await prisma.user.findUnique({
     where: {
-      id: userId,
+      id: session.user.id,
+    },
+    include: {
+      projects: project,
     },
   });
+  if (!user) {
+    return null;
+  }
   return user;
 }
 

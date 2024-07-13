@@ -43,10 +43,29 @@ model Project {
   id          String  @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   description String?
-  ownerId     String  @db.ObjectId
-  owner       User    @relation(fields: [ownerId], references: [id])
+  isFavourite Boolean @default(false)
+  isPublic    Boolean @default(true)
+  githubUrl   String?
+  deployedUrl String?
+
+  ownerId String  @db.ObjectId
+  owner   User    @relation(fields: [ownerId], references: [id])
   // collaborators Collaborator[]
   // shareableLink ShareableLink?
+  tasks   Task[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Task {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String?
+  isCompleted Boolean @default(false)
+
+  projectId String  @db.ObjectId
+  Project   Project @relation(fields: [projectId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

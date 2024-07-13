@@ -19,7 +19,11 @@ export default async function sitemap() {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/docs`,
+      url: `${baseUrl}/dashboard`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/dashboard/settings`,
       lastModified: new Date(),
     },
     {

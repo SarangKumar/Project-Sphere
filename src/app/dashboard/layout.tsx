@@ -28,12 +28,9 @@ const DashboardLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div className="">
-      <DashboardNavbar />
-      <main className="xs:px-6 mx-auto max-w-screen-1.5xl px-4 py-8">
-        {children}
-      </main>
-    </div>
+    <>
+      <main className="">{children}</main>
+    </>
   );
 };
 

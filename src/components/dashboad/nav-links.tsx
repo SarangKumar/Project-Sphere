@@ -23,7 +23,7 @@ const NavLink: React.FC<React.HTMLProps<HTMLAnchorElement> & NavLinkProps> = ({
       className={cn(
         "relative rounded-md px-2 py-1.5 text-sm text-secondary-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground",
         activeLink &&
-          "after:absolute after:-bottom-1 after:left-0 after:h-1 after:w-full after:border-b after:bg-rose-500 after:content-['']",
+          "after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-foreground after:content-['']",
         className
       )}
       {...props}
