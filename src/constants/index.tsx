@@ -22,6 +22,17 @@ export const dashboardSidebarLinks = [
   },
 ];
 
+export const dashboardNavbarLinks = [
+  {
+    title: "Overview",
+    href: "/dashboard",
+  },
+  {
+    title: "Settings",
+    href: "/dashboard/settings",
+  },
+];
+
 export const navLinks = [
   {
     title: "Docs",

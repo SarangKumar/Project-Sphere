@@ -15,6 +15,32 @@ export const getUserByEmail = async (email: string) => {
   }
 };
 
+// export async function getUserById(userId: string) {
+//   try {
+//     const user = await prisma.user.findUnique({
+//       where: {
+//         id: userId,
+//       },
+//     });
+//     if (!user) {
+//       throw new Error("User not found");
+//     }
+//     return user;
+//   } catch (error) {
+//     console.error("Error retrieving user:", error);
+//     throw error;
+//   }
+// }
+
+export async function getUserById(userId: string) {
+  const user = await prisma.user.findUnique({
+    where: {
+      id: userId,
+    },
+  });
+  return user;
+}
+
 export function ServerResponse(
   data: any,
   success: boolean,

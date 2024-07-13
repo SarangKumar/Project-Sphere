@@ -11,6 +11,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { GeistMono } from "geist/font/mono";
+import { getServerSession } from "next-auth";
 
 export const PricingTablePlanLg = () => {
   return (
@@ -129,7 +130,7 @@ const TableRowTooTip = ({
   );
 };
 
-export const TableHead = ({
+export const TableHead = async ({
   name,
   price,
   isPopular,
@@ -137,6 +138,9 @@ export const TableHead = ({
   link,
   className,
 }: PricingCardProps & { colSpan?: number; className?: string }) => {
+  const session = await getServerSession();
+  const isSignedIn = !!session?.user;
+
   return (
     <th
       colSpan={colSpan}
@@ -152,7 +156,7 @@ export const TableHead = ({
         </p>
       </h3>
       <Link
-        href={link}
+        href={isSignedIn ? link : "/"}
         className={cn(buttonVariants({ size: "lg" }), "w-full py-1.5")}
       >
         Get Started

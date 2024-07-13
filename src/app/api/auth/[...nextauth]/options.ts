@@ -5,6 +5,22 @@ import NextAuth, { type NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { loginWithEmail } from "../../utils";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { User } from "@prisma/client";
+
+declare module "next-auth" {
+  interface Session {
+    user: {
+      id: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+    };
+  }
+
+  interface JWT {
+    id: string;
+  }
+}
 
 export const authOptions: NextAuthOptions = {
   // adapter: PrismaAdapter(prisma),
@@ -21,7 +37,7 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.AUTH_GITHUB_SECRET!,
     }),
     CredentialsProvider({
-      name: "credentials",
+      name: "Credentials",
       credentials: {
         email: {
           label: "Email",
@@ -52,8 +68,6 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
     session: ({ session, token }) => {
-      // console.log("Session Callback", { session, token });
-      // console.log("return value: ", {...session, id: token.id})
       return {
         ...session,
         user: {
@@ -65,11 +79,11 @@ export const authOptions: NextAuthOptions = {
     jwt: ({ token, user }) => {
       // console.log("JWT Callback", { token, user });
       if (user) {
-        const u = user as unknown as any;
-        console.log(u);
+        // const u = user as any;
+        console.log("JWT return", { ...token, userid: user.id });
         return {
           ...token,
-          id: u.id,
+          id: user.id,
         };
       }
       return token;

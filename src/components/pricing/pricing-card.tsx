@@ -5,6 +5,7 @@ import { buttonVariants } from "../ui/button";
 import Link from "next/link";
 import { pricingPlans } from "@/constants";
 import { Check } from "lucide-react";
+import { getServerSession } from "next-auth";
 
 export interface PricingCardProps {
   name: string;
@@ -20,7 +21,7 @@ export interface PricingCardProps {
   pricingHeader?: string;
 }
 
-const PricingCard = ({
+const PricingCard = async ({
   price,
   features,
   name,
@@ -30,6 +31,9 @@ const PricingCard = ({
   link,
   isPopular,
 }: PricingCardProps) => {
+  const session = await getServerSession();
+  const isSignedIn = !!session?.user;
+
   return (
     <div
       className={cn(
@@ -37,13 +41,19 @@ const PricingCard = ({
         isPopular && "border-2 border-primary"
       )}
     >
-      <h2 className={cn(GeistMono.className, "text-xl font-bold uppercase")}>
+      <h2
+        className={cn(
+          GeistMono.className,
+          isPopular && "inline-flex items-center",
+          "text-xl font-bold uppercase"
+        )}
+      >
         {name}
         {isPopular && (
           <span
             className={cn(
               buttonVariants({ variant: "default" }),
-              "my-1 ml-2 inline border-none px-2 py-0.5 font-sans text-xs"
+              "my-2 ml-2 inline-flex border-none px-2 py-0.5 font-sans text-xs"
             )}
           >
             Most Popular
@@ -53,7 +63,10 @@ const PricingCard = ({
       <p className="text-sm font-medium text-secondary-foreground">
         {description}
       </p>
-      <a href={link} className={cn(buttonVariants({ size: "lg" }))}>
+      <a
+        href={isSignedIn ? link : "/"}
+        className={cn(buttonVariants({ size: "lg" }))}
+      >
         Get Started
       </a>
       <p className="my-2 text-xxs text-secondary-foreground">
