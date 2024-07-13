@@ -24,7 +24,7 @@ const SearchProject = ({ placeholder }: { placeholder: string }) => {
         Search
       </label>
       <Input
-        className="peer h-8 pl-10 text-xs font-medium"
+        className="peer h-7 pl-8 text-xs font-medium"
         placeholder={placeholder}
         autoFocus
         onChange={(e) => {
@@ -32,7 +32,7 @@ const SearchProject = ({ placeholder }: { placeholder: string }) => {
         }}
         defaultValue={searchParams.get("query")?.toString()}
       />
-      <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 stroke-[1.8] text-border peer-focus:text-secondary-foreground" />
+      <MagnifyingGlassIcon className="absolute left-2 top-1/2 h-[18px] w-[18px] -translate-y-1/2 stroke-[1.8] text-border peer-focus:text-secondary-foreground" />
     </div>
   );
 };

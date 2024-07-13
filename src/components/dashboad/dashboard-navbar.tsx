@@ -7,7 +7,7 @@ const DashboardNavbar = async ({ title }: { title: string }) => {
 
   if (!user) return null;
   return (
-    <div>
+    <div className="sticky top-0 z-20 bg-background">
       <header className="flex h-12 items-center justify-between border-b px-4 md:px-6">
         <p className="text-sm text-secondary-foreground">{title}</p>
         <AvatarHoverCard

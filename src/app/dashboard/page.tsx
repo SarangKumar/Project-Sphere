@@ -8,6 +8,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 import SearchProject from "@/components/dashboad/search-project";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const metadata: Metadata = {
   title: "All Projects | Dashboard",
@@ -41,18 +42,54 @@ const DashboardPage = async ({
             <div className="flex items-center gap-x-4 pb-4">
               <Link
                 href="/dashboard/create/project"
-                className={cn(buttonVariants(), "h-8")}
+                className={cn(buttonVariants(), "h-7")}
               >
                 New Project
               </Link>
               <SearchProject placeholder="Search Projects" />
             </div>
 
-            <menu className="mx-auto grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-              {filteredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </menu>
+            <ScrollArea className="w-full">
+              <menu className="mx-auto grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+                {filteredProjects.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+              </menu>
+
+              {user.projects.length === 0 && (
+                <div className="flex h-[60dvh] flex-col items-center justify-center gap-y-2 rounded-md bg-secondary/40 p-12">
+                  <span className="text-base text-foreground md:text-lg">
+                    No project found
+                  </span>
+                  <p className="max-w-md text-balance text-center text-xs text-secondary-foreground md:text-sm">
+                    We couldn&apos;t find any projects associated with your
+                    account.
+                    <br />
+                    It looks like you haven&apos;t started any projects yet. Why
+                    not create your first project now?
+                  </p>
+                  <div className="mt-2 flex items-center gap-2">
+                    <Link
+                      className={cn(buttonVariants({ className: "w-32" }))}
+                      href="dashboard/create/project"
+                    >
+                      Create Project
+                    </Link>
+                    <Link
+                      href="/docs"
+                      className={cn(
+                        buttonVariants({
+                          variant: "secondary",
+                          className: "w-32",
+                        })
+                      )}
+                    >
+                      Docs
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </ScrollArea>
           </div>
         </main>
       </div>

@@ -8,6 +8,8 @@ export interface GaugeProps extends Omit<SVGProps<SVGSVGElement>, "className"> {
   strokeWidth?: number;
   equal?: boolean;
   showValue?: boolean;
+  max?: number;
+  reverse?: boolean;
 
   primary?:
     | "danger"
@@ -61,6 +63,8 @@ export function Gauge({
   strokeWidth = 10,
   equal = false,
   showValue = true,
+  max = 100,
+  reverse = false,
 
   primary,
   secondary,
@@ -75,7 +79,11 @@ export function Gauge({
 
   ...props
 }: GaugeProps) {
-  const strokePercent = value; // %
+  let modifiedValue = value;
+  if (max !== 100) {
+    modifiedValue = (value / max) * 100;
+  }
+  const strokePercent = modifiedValue; // %
 
   const circleSize = 100; // px
   const radius = circleSize / 2 - strokeWidth / 2;
@@ -252,17 +260,28 @@ export function Gauge({
 
           if (
             ["danger", "warning", "success", "info"].includes(secondaryStroke)
-          ) {
-            if (secondaryStroke === "danger") {
-              secondaryStroke = "var(--ds-red-100)";
-            } else if (secondaryStroke === "warning") {
-              secondaryStroke = "var(--ds-amber-100)";
-            } else if (secondaryStroke === "info") {
-              secondaryStroke = "var(--ds-blue-100)";
-            } else if (secondaryStroke === "success") {
-              secondaryStroke = "var(--ds-green-100)";
+          )
+            if (reverse) {
+              if (secondaryStroke === "danger") {
+                secondaryStroke = "var(--ds-green-100)";
+              } else if (secondaryStroke === "warning") {
+                secondaryStroke = "var(--ds-blue-100)";
+              } else if (secondaryStroke === "info") {
+                secondaryStroke = "var(--ds-amber-100)";
+              } else if (secondaryStroke === "success") {
+                secondaryStroke = "var(--ds-red-100)";
+              }
+            } else {
+              if (secondaryStroke === "danger") {
+                secondaryStroke = "var(--ds-red-100)";
+              } else if (secondaryStroke === "warning") {
+                secondaryStroke = "var(--ds-amber-100)";
+              } else if (secondaryStroke === "info") {
+                secondaryStroke = "var(--ds-blue-100)";
+              } else if (secondaryStroke === "success") {
+                secondaryStroke = "var(--ds-green-100)";
+              }
             }
-          }
 
           break;
         }
@@ -368,7 +387,7 @@ export function Gauge({
             typeof className === "object" && className?.textClassName
           )}
         >
-          {Math.round(strokePercent)}
+          {Math.round(value)}
         </text>
       )}
     </svg>

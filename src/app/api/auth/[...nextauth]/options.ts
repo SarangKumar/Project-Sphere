@@ -67,15 +67,6 @@ export const authOptions: NextAuthOptions = {
     signIn: "/auth/sign-in",
   },
   callbacks: {
-    session: ({ session, token }) => {
-      return {
-        ...session,
-        user: {
-          ...session.user,
-          id: token.id,
-        },
-      };
-    },
     jwt: ({ token, user }) => {
       // console.log("JWT Callback", { token, user });
       if (user) {
@@ -87,6 +78,15 @@ export const authOptions: NextAuthOptions = {
         };
       }
       return token;
+    },
+    session: ({ session, token }) => {
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          id: token.id,
+        },
+      };
     },
   },
 };
