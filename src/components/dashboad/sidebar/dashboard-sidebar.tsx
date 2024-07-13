@@ -2,13 +2,25 @@ import React from "react";
 import { dashboardNavbarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import SidebarStatus from "./sidebar-status";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import ActiveLink from "./active-link";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 
 const DashboardSidebar = ({ className }: { className?: string }) => {
   return (
     <aside
       className={cn(
-        "sticky top-0 flex h-dvh w-1/5 max-w-[260px] flex-col border-r sm:w-full",
+        "xs:w-1/5 sticky top-0 hidden h-dvh max-w-[280px] shrink flex-col border-r sm:w-full md:flex",
         className
       )}
     >
@@ -40,3 +52,25 @@ const DashboardSidebar = ({ className }: { className?: string }) => {
 };
 
 export default DashboardSidebar;
+
+export const DashboardSidebarMain = () => {
+  return (
+    <aside>
+      <div className="p-0 md:hidden">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button size="icon" variant="ghost">
+              <Menu />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="w-[280px] p-0">
+            <DashboardSidebar />
+          </SheetContent>
+        </Sheet>
+      </div>
+      <div className="hidden md:block">
+        <DashboardSidebar />
+      </div>
+    </aside>
+  );
+};

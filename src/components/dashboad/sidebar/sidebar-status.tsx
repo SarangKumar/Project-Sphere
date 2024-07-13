@@ -6,7 +6,7 @@ const SidebarStatus = async () => {
   const user = await getUserBySession({ project: true });
   if (!user) return null;
   return (
-    <div className="px--4 flex items-center justify-start gap-x-2 space-y-1 border-t py-4 text-sm md:px-6">
+    <div className="flex items-center justify-start gap-x-2 space-y-1 border-t px-4 py-4 text-sm md:px-6">
       <Gauge
         className=""
         value={user.projects.length}

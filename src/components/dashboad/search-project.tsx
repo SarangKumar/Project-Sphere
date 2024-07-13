@@ -19,12 +19,12 @@ const SearchProject = ({ placeholder }: { placeholder: string }) => {
   const pathname = usePathname();
   const { replace } = useRouter();
   return (
-    <div className="relative flex flex-1 flex-shrink-0">
+    <div className="relative flex w-full flex-1 flex-shrink-0">
       <label htmlFor="search" className="sr-only">
         Search
       </label>
       <Input
-        className="peer h-7 pl-8 text-xs font-medium"
+        className="peer h-8 pl-8 text-xs font-medium md:h-7"
         placeholder={placeholder}
         autoFocus
         onChange={(e) => {

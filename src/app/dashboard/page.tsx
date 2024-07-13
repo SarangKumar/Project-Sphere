@@ -1,6 +1,8 @@
 import React from "react";
 import { getUserBySession } from "../api/utils";
-import DashboardSidebar from "@/components/dashboad/sidebar/dashboard-sidebar";
+import DashboardSidebar, {
+  DashboardSidebarMain,
+} from "@/components/dashboad/sidebar/dashboard-sidebar";
 import DashboardNavbar from "@/components/dashboad/dashboard-navbar";
 import ProjectCard from "@/components/dashboad/project-card";
 import Link from "next/link";
@@ -35,11 +37,11 @@ const DashboardPage = async ({
   return (
     <>
       <div className="flex">
-        <DashboardSidebar className="" />
+        <DashboardSidebar />
         <main className="flex-1">
           <DashboardNavbar title="Projects" />
-          <div className="w-full min-w-96 flex-1 px-4 py-4 text-sm md:px-6 md:py-6">
-            <div className="flex items-center gap-x-4 pb-4">
+          <div className="w-full flex-1 px-4 py-4 text-sm md:px-6 md:py-6">
+            <div className="flex flex-col items-start gap-4 pb-4 md:flex-row md:items-center">
               <Link
                 href="/dashboard/create/project"
                 className={cn(buttonVariants(), "h-7")}
