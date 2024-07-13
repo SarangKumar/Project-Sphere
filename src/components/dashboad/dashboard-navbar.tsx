@@ -26,7 +26,7 @@ const DashboardNavbar = async ({ title }: { title: string }) => {
             name={user.name}
             email={user.email}
             image={user.image}
-            size="base"
+            size="sm"
           />
         </header>
       </div>

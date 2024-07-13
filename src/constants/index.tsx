@@ -54,6 +54,19 @@ export const dashboardNavbarLinks = [
       },
     ],
   },
+  {
+    name: "Documentation 2",
+    links: [
+      {
+        title: "Guides 2",
+        href: "/docs/guides",
+      },
+      {
+        title: "API Reference 2",
+        href: "/docs/api",
+      },
+    ],
+  },
 ];
 
 export const navLinks = [

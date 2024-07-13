@@ -27,7 +27,7 @@ const DashboardSidebar = ({ className }: { className?: string }) => {
       <h3 className="flex h-12 items-center truncate border-b px-6 text-lg text-foreground">
         Dashboard
       </h3>
-      <div className="block flex-1 text-xs md:text-sm">
+      <div className="block flex-1 overflow-y-auto text-sm">
         {dashboardNavbarLinks.map((sectionLink) => (
           <menu
             className="space-y-2 border-b p-4 md:p-6"
