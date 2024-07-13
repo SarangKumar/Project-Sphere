@@ -2,6 +2,7 @@ import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import bcrypt from "bcryptjs";
 import { parseISO, format, formatDistanceToNow } from "date-fns";
+import chroma from "chroma-js";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -45,3 +46,26 @@ export function wait(ms: number) {
 export function formatDate(date: Date) {
   return formatDistanceToNow(date, { addSuffix: true });
 }
+
+export const interpolateColor = (
+  percent: number,
+  startColor: string,
+  endColor: string
+): string => {
+  const scale = chroma.scale([startColor, endColor]);
+  return scale(percent / 100).hex();
+};
+
+export const generateColorMap = (
+  percentages: number[],
+  startColor: string,
+  endColor: string
+): { [key: number]: string } => {
+  return percentages.reduce(
+    (acc, percent) => {
+      acc[percent] = interpolateColor(percent, startColor, endColor);
+      return acc;
+    },
+    {} as { [key: number]: string }
+  );
+};
