@@ -31,6 +31,10 @@ export const dashboardNavbarLinks = [
         href: "/dashboard",
       },
       {
+        title: "Create New Projects",
+        href: "/dashboard/create/project",
+      },
+      {
         title: "Settings",
         href: "/dashboard/settings",
       },

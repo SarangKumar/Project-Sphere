@@ -1,7 +1,6 @@
+import React from "react";
 import { dashboardNavbarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
-import React from "react";
-import { ScrollArea } from "../../ui/scroll-area";
 import SidebarStatus from "./sidebar-status";
 import ActiveLink from "./active-link";
 
@@ -16,9 +15,12 @@ const DashboardSidebar = ({ className }: { className?: string }) => {
       <h3 className="flex h-12 items-center truncate border-b px-6 text-lg text-foreground">
         Dashboard
       </h3>
-      <div className="block flex-1 text-sm">
+      <div className="block flex-1 text-xs md:text-sm">
         {dashboardNavbarLinks.map((sectionLink) => (
-          <menu className="space-y-2 border-b p-6" key={sectionLink.name}>
+          <menu
+            className="space-y-2 border-b p-4 md:p-6"
+            key={sectionLink.name}
+          >
             <li className="truncate font-light text-secondary-foreground">
               {sectionLink.name}
             </li>

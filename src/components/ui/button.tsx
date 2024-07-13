@@ -7,11 +7,10 @@ import { cn } from "@/lib/utils";
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 relative cursor-pointer ease-out duration-200 rounded-md transition-all",
   {
-    // "outline-0 border bg-primary-400 hover:bg-primary/80 hover:bg-primary/50 border-primary-500/75  hover:border-primary-600 focus-visible:outline-primary-600 data-[state=open]:bg-primary-400/80  data-[state=open]:outline-primary-600 text-white",
     variants: {
       variant: {
         default:
-          "bg-primary/50 border-primary text-primary-foreground shadow-sm hover:bg-primary/30 border-primary border",
+          "bg-primary/70 border-primary text-primary-foreground shadow-sm hover:bg-primary/50 border-primary border",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
@@ -23,7 +22,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-6 px-2 py-1",
+        default: "h-7 px-2.5 py-1",
         sm: "h-8 rounded px-3 text-xxs",
         lg: "h-[38px] rounded-md text-sm px-4 py-2 space-x-2 ",
         icon: "h-6 w-6",

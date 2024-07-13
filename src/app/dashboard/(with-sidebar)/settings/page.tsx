@@ -1,6 +1,13 @@
 import { getUserBySession } from "@/app/api/utils";
-import { AvatarHoverCard } from "@/components/navbar/user-profile";
+import DashboardNavbar from "@/components/dashboad/dashboard-navbar";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Settings",
+  description:
+    "Manage your account settings, subscription details, and preferences. Customize your experience and ensure your projects are secure and well-organized.",
+};
 
 const SettingsPage = async () => {
   const user = await getUserBySession({ project: false });
@@ -9,15 +16,7 @@ const SettingsPage = async () => {
 
   return (
     <div>
-      <header className="flex h-12 items-center justify-between border-b px-4">
-        <p className="text-sm text-secondary-foreground">Settings</p>
-        <AvatarHoverCard
-          name={user.name}
-          email={user.email}
-          image={user.image}
-          size="base"
-        />
-      </header>
+      <DashboardNavbar title="Settings" />
       <div className="w-full min-w-96 flex-1 px-4 py-4 text-sm">
         Settings page page.tsx
       </div>
