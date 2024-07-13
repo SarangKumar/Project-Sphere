@@ -5,6 +5,8 @@ import LoadingDots from "@/components/loading-dots";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
+import { BACKWARD_COLORS } from "@/constants";
+import { generateColorMap, interpolateColor } from "@/lib/utils";
 import axios from "axios";
 import React, { useState, FormEvent } from "react";
 
@@ -26,6 +28,15 @@ const TestPage = () => {
       setLoading(false);
     }
   };
+
+  const projectLimit = 8;
+
+  const colorMap = generateColorMap(
+    [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+    "green",
+    "red"
+  );
+
   return (
     <main className="m-8">
       <form onSubmit={handleUrlSubmit} className="space-y-2">
@@ -40,39 +51,67 @@ const TestPage = () => {
       </form>
       <p className="mt-4 text-sm">{result}</p>
       <Gauge
-        value={75}
-        size="50%"
-        primary="danger"
-        gapPercent={4}
-        strokeWidth={10}
+        className=""
+        value={0}
+        max={projectLimit}
+        primary={colorMap}
+        size="35px"
       />
       <Gauge
-        value={75}
-        size="50%"
-        primary="warning"
-        gapPercent={4}
-        strokeWidth={10}
+        className=""
+        value={1}
+        max={projectLimit}
+        primary={colorMap}
+        size="35px"
       />
       <Gauge
-        value={75}
-        size="50%"
-        primary="success"
-        gapPercent={4}
-        strokeWidth={10}
+        className=""
+        value={2}
+        max={projectLimit}
+        primary={colorMap}
+        size="35px"
       />
       <Gauge
-        value={75}
-        size="50%"
-        primary="info"
-        gapPercent={4}
-        strokeWidth={10}
+        className=""
+        value={3}
+        max={projectLimit}
+        primary={colorMap}
+        size="35px"
       />
       <Gauge
-        value={75}
-        size="50%"
-        primary="text-purple-500"
-        gapPercent={4}
-        strokeWidth={10}
+        className=""
+        value={4}
+        max={projectLimit}
+        primary={colorMap}
+        size="35px"
+      />
+      <Gauge
+        className=""
+        value={5}
+        max={projectLimit}
+        primary={colorMap}
+        size="35px"
+      />
+      <Gauge
+        className=""
+        value={6}
+        max={projectLimit}
+        primary={colorMap}
+        size="35px"
+      />
+      <Gauge
+        className=""
+        value={7}
+        max={projectLimit}
+        primary={colorMap}
+        size="35px"
+      />
+      <Gauge
+        className=""
+        value={8}
+        max={projectLimit}
+        primary={colorMap}
+        size="35px"
       />
       <Progress value={75} className="text-success" />
       <p className="text-warn">adff</p>

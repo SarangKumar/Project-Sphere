@@ -1,4 +1,5 @@
 import { PricingCardProps } from "@/components/pricing/pricing-card";
+import { interpolateColor } from "@/lib/utils";
 // import { PricingTablePlanProps } from "@/components/pricing/pricing-table";
 import { Folder, LayoutDashboard, Settings } from "lucide-react";
 
@@ -418,3 +419,17 @@ export const pricingFaq = [
       " We accept all major credit cards. For enterprise customers, we also offer invoicing options.",
   },
 ];
+
+export const BACKWARD_COLORS = {
+  0: interpolateColor(0, "#022c22", "#e5484d"),
+  10: interpolateColor(10, "#022c22", "#e5484d"),
+  20: interpolateColor(20, "#022c22", "#e5484d"),
+  30: interpolateColor(30, "#022c22", "#e5484d"),
+  40: interpolateColor(40, "#022c22", "#e5484d"),
+  50: interpolateColor(50, "#022c22", "#e5484d"),
+  60: interpolateColor(60, "#022c22", "#e5484d"),
+  70: interpolateColor(70, "#022c22", "#e5484d"),
+  80: interpolateColor(80, "#022c22", "#e5484d"),
+  90: interpolateColor(90, "#022c22", "#e5484d"),
+  100: interpolateColor(100, "#022c22", "#e5484d"),
+};

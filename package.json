@@ -43,6 +43,7 @@
     "boring-avatars": "^1.10.2",
     "chalk": "^5.3.0",
     "cheerio": "^1.0.0-rc.12",
+    "chroma-js": "^2.4.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
@@ -69,6 +70,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/chroma-js": "^2.4.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

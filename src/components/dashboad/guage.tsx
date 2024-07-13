@@ -9,7 +9,6 @@ export interface GaugeProps extends Omit<SVGProps<SVGSVGElement>, "className"> {
   equal?: boolean;
   showValue?: boolean;
   max?: number;
-  reverse?: boolean;
 
   primary?:
     | "danger"
@@ -64,7 +63,6 @@ export function Gauge({
   equal = false,
   showValue = true,
   max = 100,
-  reverse = false,
 
   primary,
   secondary,
@@ -261,26 +259,14 @@ export function Gauge({
           if (
             ["danger", "warning", "success", "info"].includes(secondaryStroke)
           )
-            if (reverse) {
-              if (secondaryStroke === "danger") {
-                secondaryStroke = "var(--ds-green-100)";
-              } else if (secondaryStroke === "warning") {
-                secondaryStroke = "var(--ds-blue-100)";
-              } else if (secondaryStroke === "info") {
-                secondaryStroke = "var(--ds-amber-100)";
-              } else if (secondaryStroke === "success") {
-                secondaryStroke = "var(--ds-red-100)";
-              }
-            } else {
-              if (secondaryStroke === "danger") {
-                secondaryStroke = "var(--ds-red-100)";
-              } else if (secondaryStroke === "warning") {
-                secondaryStroke = "var(--ds-amber-100)";
-              } else if (secondaryStroke === "info") {
-                secondaryStroke = "var(--ds-blue-100)";
-              } else if (secondaryStroke === "success") {
-                secondaryStroke = "var(--ds-green-100)";
-              }
+            if (secondaryStroke === "danger") {
+              secondaryStroke = "var(--ds-red-100)";
+            } else if (secondaryStroke === "warning") {
+              secondaryStroke = "var(--ds-amber-100)";
+            } else if (secondaryStroke === "info") {
+              secondaryStroke = "var(--ds-blue-100)";
+            } else if (secondaryStroke === "success") {
+              secondaryStroke = "var(--ds-green-100)";
             }
 
           break;

@@ -14,12 +14,14 @@ const DashboardNavbar = async ({ title }: { title: string }) => {
     <Sheet>
       <div className="sticky top-0 z-20 bg-background">
         <header className="flex h-12 items-center justify-between border-b px-4 md:px-6">
-          <SheetTrigger asChild className="md:hidden">
-            <Button size="icon" variant="ghost">
-              <Menu />
-            </Button>
-          </SheetTrigger>
-          <p className="text-sm text-secondary-foreground">{title}</p>
+          <span className="flex items-center gap-x-2">
+            <SheetTrigger asChild className="md:hidden">
+              <Button size="icon" variant="ghost">
+                <Menu />
+              </Button>
+            </SheetTrigger>
+            <p className="text-sm text-secondary-foreground">{title}</p>
+          </span>
           <AvatarHoverCard
             name={user.name}
             email={user.email}
