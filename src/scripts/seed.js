@@ -15,22 +15,22 @@ const load = async () => {
   } else {
     try {
       await prisma.project.deleteMany();
-      console.log("✓" + " [1/4] " + chalk.red("Deleted project records"));
+      console.log("✓" + " [1/6] " + chalk.red("Deleted project records"));
 
       await prisma.user.deleteMany();
-      console.log("✓" + " [2/4] " + chalk.red("Deleted user records"));
+      console.log("✓" + " [2/6] " + chalk.red("Deleted user records"));
 
       await prisma.task.deleteMany();
-      console.log("✓" + " [2/4] " + chalk.red("Deleted task records"));
+      console.log("✓" + " [3/6] " + chalk.red("Deleted task records"));
 
       await prisma.user.createMany({ data: usersData });
-      console.log("✓" + " [3/4] " + chalk.green("Added new user data"));
+      console.log("✓" + " [4/6] " + chalk.green("Added new user data"));
 
       await prisma.project.createMany({ data: projectsData });
-      console.log("✓" + " [4/4] " + chalk.green("Added new project data"));
+      console.log("✓" + " [5/6] " + chalk.green("Added new project data"));
 
       await prisma.task.createMany({ data: tasksData });
-      console.log("✓" + " [4/4] " + chalk.green("Added new task data"));
+      console.log("✓" + " [6/6] " + chalk.green("Added new task data"));
 
       console.log(chalk.yellow("\n✨✨ Seeded data successfully"));
     } catch (e) {

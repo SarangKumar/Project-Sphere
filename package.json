@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
+    "prisma-seed": "npx prisma generate && npx prisma db push && node src/scripts/seed.js",
     "seed": "node src/scripts/seed.js",
     "format": "npx prettier . --write  --ignore-unknown"
   },

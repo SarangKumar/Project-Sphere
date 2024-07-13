@@ -16,5 +16,95 @@
     "projectId": "668e9275812ee0a34e3341c1",
     "createdAt": "2024-07-12T14:10:00.000Z",
     "updatedAt": "2024-07-12T14:10:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678905",
+    "title": "Create Landing Page",
+    "description": "Design and develop the landing page for the project",
+    "isCompleted": false,
+    "projectId": "668e9275812ee0a34e3341c1",
+    "createdAt": "2024-07-12T15:00:00.000Z",
+    "updatedAt": "2024-07-12T15:00:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678906",
+    "title": "Set Up Database",
+    "description": "Configure MongoDB and set up initial schema",
+    "isCompleted": true,
+    "projectId": "668e9275812ee0a34e3341c1",
+    "createdAt": "2024-07-12T15:30:00.000Z",
+    "updatedAt": "2024-07-12T15:30:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678907",
+    "title": "Implement User Profile",
+    "description": "Develop user profile page with editable fields",
+    "isCompleted": false,
+    "projectId": "668e9275812ee0a34e3341c1",
+    "createdAt": "2024-07-12T16:00:00.000Z",
+    "updatedAt": "2024-07-12T16:00:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678908",
+    "title": "Create API Endpoints",
+    "description": "Set up API routes for CRUD operations",
+    "isCompleted": false,
+    "projectId": "668e9275812ee0a34e3341c1",
+    "createdAt": "2024-07-12T16:30:00.000Z",
+    "updatedAt": "2024-07-12T16:30:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678909",
+    "title": "Implement Authorization",
+    "description": "Add role-based access control to the application",
+    "isCompleted": false,
+    "projectId": "668e9275812ee0a34e3341c2",
+    "createdAt": "2024-07-12T17:00:00.000Z",
+    "updatedAt": "2024-07-12T17:00:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678910",
+    "title": "Integrate Stripe",
+    "description": "Set up Stripe for handling subscriptions and payments",
+    "isCompleted": false,
+    "projectId": "668e9275812ee0a34e3341c2",
+    "createdAt": "2024-07-12T17:30:00.000Z",
+    "updatedAt": "2024-07-12T17:30:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678911",
+    "title": "Deploy to Vercel",
+    "description": "Deploy the application to Vercel and set up custom domain",
+    "isCompleted": true,
+    "projectId": "668e9275812ee0a34e3341c2",
+    "createdAt": "2024-07-12T18:00:00.000Z",
+    "updatedAt": "2024-07-12T18:00:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678912",
+    "title": "Write Documentation",
+    "description": "Create comprehensive documentation for the project",
+    "isCompleted": false,
+    "projectId": "668e9275812ee0a34e3341c2",
+    "createdAt": "2024-07-12T18:30:00.000Z",
+    "updatedAt": "2024-07-12T18:30:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678913",
+    "title": "Set Up CI/CD",
+    "description": "Configure continuous integration and deployment",
+    "isCompleted": false,
+    "projectId": "668e9275812ee0a34e3341c3",
+    "createdAt": "2024-07-12T19:00:00.000Z",
+    "updatedAt": "2024-07-12T19:00:00.000Z"
+  },
+  {
+    "id": "64b9f5d3e6e5f12345678914",
+    "title": "Optimize Performance",
+    "description": "Implement performance optimizations and code splitting",
+    "isCompleted": false,
+    "projectId": "668e9275812ee0a34e3341c3",
+    "createdAt": "2024-07-12T19:30:00.000Z",
+    "updatedAt": "2024-07-12T19:30:00.000Z"
   }
 ]

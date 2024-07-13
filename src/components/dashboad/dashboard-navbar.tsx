@@ -1,40 +1,22 @@
-import React from "react";
-import Logo from "../logo";
-import { dashboardNavbarLinks } from "@/constants";
-import NavLink from "./nav-links";
-import { AvatarHoverCard } from "../navbar/user-profile";
 import { getUserBySession } from "@/app/api/utils";
+import React from "react";
+import { AvatarHoverCard } from "../navbar/user-profile";
 
-const DashboardNavbar = async () => {
+const DashboardNavbar = async ({ title }: { title: string }) => {
   const user = await getUserBySession({ project: false });
 
   if (!user) return null;
-
   return (
-    <div className="w-full space-y-4 border-b px-4 md:px-6">
-      <div className="flex items-center justify-between gap-x-2 pt-4">
-        <div className="flex items-center gap-x-4">
-          <Logo asLink />{" "}
-          <span className="text-sm font-semibold">{user.name}</span>
-        </div>
+    <div>
+      <header className="flex h-12 items-center justify-between border-b px-4 md:px-6">
+        <p className="text-sm text-secondary-foreground">{title}</p>
         <AvatarHoverCard
           name={user.name}
           email={user.email}
           image={user.image}
+          size="base"
         />
-      </div>
-      <nav className="flex items-center gap-x-3 pb-1.5">
-        {dashboardNavbarLinks.map((link) => (
-          <NavLink key={link.title} href={link.href} className="text-sm">
-            {link.title}
-          </NavLink>
-        ))}
-      </nav>
-      {/* {process.env.NODE_ENV === "development" && (
-        <>
-          {JSON.stringify(user)}
-        </>
-      )} */}
+      </header>
     </div>
   );
 };

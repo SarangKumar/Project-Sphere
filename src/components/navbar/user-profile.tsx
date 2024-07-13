@@ -19,7 +19,7 @@ export const UserProfile = ({
   return (
     <div className="flex items-center gap-x-2">
       <>
-        <Avatar image={image} name={name} />
+        <Avatar image={image} name={name} size="base" />
         <span className="sr-only">{name} thumbnail</span>
       </>
       <div className="flex flex-col items-start">
@@ -34,10 +34,12 @@ export const AvatarHoverCard = ({
   name,
   email,
   image,
+  size = "base",
 }: {
   name: string | null | undefined;
   email: string | null | undefined;
   image: string | null | undefined;
+  size?: "sm" | "base" | "lg";
 }) => {
   name = name || "";
   email = email || "";
@@ -48,8 +50,8 @@ export const AvatarHoverCard = ({
       <HoverCardTrigger asChild>
         <button>
           <>
-            <Avatar image={image} name={name} />
-            <span className="sr-only">Open user profile</span>
+            <Avatar image={image} name={name} size={size} />
+            <span className="sr-only">{name}&apos;s profile</span>
           </>
         </button>
       </HoverCardTrigger>
