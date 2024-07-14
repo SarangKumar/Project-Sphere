@@ -1,4 +1,4 @@
-import { Plans, pricingFeatures, pricingPlans } from "@/constants";
+import { pricingFeatures, pricingPlans } from "@/constants";
 import React from "react";
 import {
   Tooltip,
@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { GeistMono } from "geist/font/mono";
 import { getServerSession } from "next-auth";
+import { SUBSCRIPTION_TIER } from "@/config/subscription";
 
 export const PricingTablePlanLg = () => {
   return (
@@ -37,16 +38,16 @@ export const PricingTablePlanLg = () => {
               description={feature.feature.description}
             />
             <TableTd
-              title={feature.free.title}
-              description={feature.free.description}
+              title={feature.FREE.title}
+              description={feature.FREE.description}
             />
             <TableTd
-              title={feature.gold.title}
-              description={feature.gold.description}
+              title={feature.GOLD.title}
+              description={feature.GOLD.description}
             />
             <TableTd
-              title={feature.platinum.title}
-              description={feature.platinum.description}
+              title={feature.PLATINUM.title}
+              description={feature.PLATINUM.description}
             />
           </tr>
         ))}
@@ -58,13 +59,13 @@ export const PricingTablePlanLg = () => {
 export const PricingTablePlanSm = () => {
   return (
     <div className="mx-auto mb-16 mt-24 max-w-screen-md space-y-12 lg:hidden">
-      <PricingTablePlansCol plan="free" />
-      <PricingTablePlansCol plan="gold" />
-      <PricingTablePlansCol plan="platinum" />
+      <PricingTablePlansCol plan="FREE" />
+      <PricingTablePlansCol plan="GOLD" />
+      <PricingTablePlansCol plan="PLATINUM" />
     </div>
   );
 };
-export const PricingTablePlansCol = ({ plan }: { plan: Plans }) => {
+export const PricingTablePlansCol = ({ plan }: { plan: SUBSCRIPTION_TIER }) => {
   const selectedPlan = pricingPlans.find(
     (p) => p.name.toLowerCase() === plan.toLowerCase()
   );

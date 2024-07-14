@@ -1,10 +1,8 @@
 import React from "react";
 import { getUserBySession } from "../api/utils";
-import DashboardSidebar, {
-  DashboardSidebarMain,
-} from "@/components/dashboad/sidebar/dashboard-sidebar";
+import DashboardSidebar from "@/components/dashboad/sidebar/dashboard-sidebar";
 import DashboardNavbar from "@/components/dashboad/dashboard-navbar";
-import ProjectCard from "@/components/dashboad/project-card";
+import ProjectCard from "@/components/dashboad/project/project-card";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";

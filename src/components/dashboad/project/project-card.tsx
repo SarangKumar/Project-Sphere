@@ -2,15 +2,9 @@ import { Project } from "@prisma/client";
 import Link from "next/link";
 import React from "react";
 import BoringAvatar from "boring-avatars";
-import {
-  ChevronRight,
-  Ellipsis,
-  Github,
-  Globe,
-  LockKeyhole,
-} from "lucide-react";
+import { ChevronRight, Github, Globe, LockKeyhole } from "lucide-react";
 import { cn, formatDate } from "@/lib/utils";
-import { buttonVariants } from "../ui/button";
+import { buttonVariants } from "../../ui/button";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
@@ -29,20 +23,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 {project.isPrivate && (
                   <LockKeyhole
                     size={12}
-                    className="stroke-[2.5] text-secondary-foreground"
+                    className="-translate-y-0.5 stroke-[2.5] text-secondary-foreground"
                   />
                 )}
               </p>
               <p className="text-secondary-foreground">asefasdfasferefgqerf</p>
             </div>
             <div>
-              {/* {project.githubUrl && (
-                <a
-                  className="h-8 w-8 rounded-full bg-primary"
-                  href={project.githubUrl}
-                >
-                </a>
-                )} */}
               <ChevronRight
                 size={14}
                 className="text-secondary-foreground transition-transform group-hover:translate-x-1"

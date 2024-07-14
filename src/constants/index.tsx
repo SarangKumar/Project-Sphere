@@ -162,9 +162,9 @@ export const pricingPlans: PricingCardProps[] = [
 
 export interface PricingFeature {
   feature: { title: string; description: string };
-  free: { title: string; description: string };
-  gold: { title: string; description: string };
-  platinum: { title: string; description: string };
+  FREE: { title: string; description: string };
+  GOLD: { title: string; description: string };
+  PLATINUM: { title: string; description: string };
 }
 
 export const pricingFeatures: PricingFeature[] = [
@@ -174,15 +174,15 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Create and manage multiple projects with ease. Organize your work and track progress within each project.",
     },
-    free: {
+    FREE: {
       title: "Up to 3",
       description: "Manage a few projects with ease using our basic tools.",
     },
-    gold: {
+    GOLD: {
       title: "Up to 10",
       description: "Manage a more projects with ease using our modern tools.",
     },
-    platinum: {
+    PLATINUM: {
       title: "Up to 30",
       description:
         "Manage a more projects with ease using our most advance tools.",
@@ -194,15 +194,15 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Keep track of your to-do lists, deadlines, and progress with robust task management tools. Assign, prioritize, and monitor tasks seamlessly.",
     },
-    free: {
+    FREE: {
       title: "Basic",
       description: "Track tasks with simple, effective tools.",
     },
-    gold: {
+    GOLD: {
       title: "Priority-based",
       description: "Set priorities and manage tasks efficiently.",
     },
-    platinum: {
+    PLATINUM: {
       title: "Priority-based",
       description: "Advanced task management with additional features.",
     },
@@ -213,15 +213,15 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Leverage advanced AI capabilities to assist with brainstorming, generating content, providing insights, and automating tasks for improved productivity.",
     },
-    free: {
+    FREE: {
       title: "Standard",
       description: "Receive AI assistance for standard project tasks.",
     },
-    gold: {
+    GOLD: {
       title: "Enhanced",
       description: "Get more accurate and context-aware AI assistance.",
     },
-    platinum: {
+    PLATINUM: {
       title: "Premium",
       description:
         "Utilize our most advanced AI model for superior assistance.",
@@ -233,16 +233,16 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Share your projects securely with others via links with expiration dates, ensuring your data remains protected.",
     },
-    free: {
+    FREE: {
       title: "Limited link expiration",
       description:
         "Share your projects securely with links that expire after a short duration.",
     },
-    gold: {
+    GOLD: {
       title: "Customizable link expiration",
       description: "Control the duration and access of your shared links.",
     },
-    platinum: {
+    PLATINUM: {
       title: "Customizable link expiration",
       description:
         "Advanced sharing options with full control over link access.",
@@ -254,16 +254,16 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Enhance team collaboration with tools designed for seamless communication and coordination. Work together in real-time, no matter where you are.",
     },
-    free: {
+    FREE: {
       title: "Basic",
       description: "Collaborate with team members using basic tools.",
     },
-    gold: {
+    GOLD: {
       title: "Enhanced",
       description:
         "Collaborate effectively with advanced tools and role-specific access controls.",
     },
-    platinum: {
+    PLATINUM: {
       title: "Enhanced",
       description: "Advanced collaboration tools with additional features.",
     },
@@ -274,12 +274,12 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Customize your projects with a variety of templates and themes to suit your style and needs.",
     },
-    free: { title: "-", description: "" },
-    gold: {
+    FREE: { title: "-", description: "" },
+    GOLD: {
       title: "Premium",
       description: "Use exclusive templates and themes for your projects.",
     },
-    platinum: {
+    PLATINUM: {
       title: "Premium",
       description:
         "Access to the most premium and customizable templates and themes.",
@@ -291,13 +291,13 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Gain insights into your projects with detailed analytics. Track performance, monitor progress, and make data-driven decisions.",
     },
-    free: { title: "-", description: "" },
-    gold: {
+    FREE: { title: "-", description: "" },
+    GOLD: {
       title: "Basic",
       description:
         "Get basic insights with essential analytics and reporting tools.",
     },
-    platinum: {
+    PLATINUM: {
       title: "Advanced",
       description: "Gain deep insights with advanced analytics and reports.",
     },
@@ -308,12 +308,12 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Tailor your workflow to fit your unique needs. Customize processes, set up automation, and streamline your tasks for efficiency.",
     },
-    free: { title: "-", description: "" },
-    gold: {
+    FREE: { title: "-", description: "" },
+    GOLD: {
       title: "Basic",
       description: "Tailor basic workflows to your needs.",
     },
-    platinum: {
+    PLATINUM: {
       title: "Advanced",
       description: "Fully customizable workflows and integrations.",
     },
@@ -324,16 +324,16 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Ensure your data is secure with top-notch security measures. Your information is protected with industry-standard encryption and security protocols.",
     },
-    free: {
+    FREE: {
       title: "Standard",
       description:
         "Ensure your projects are secure with basic security features.",
     },
-    gold: {
+    GOLD: {
       title: "Advanced",
       description: "Enhanced security measures for added protection.",
     },
-    platinum: {
+    PLATINUM: {
       title: "Enterprise-grade",
       description:
         "Top-level security and compliance features for enterprises.",
@@ -341,9 +341,9 @@ export const pricingFeatures: PricingFeature[] = [
   },
   {
     feature: { title: "Dedicated Account Manager", description: "" },
-    free: { title: "-", description: "" },
-    gold: { title: "-", description: "" },
-    platinum: {
+    FREE: { title: "-", description: "" },
+    GOLD: { title: "-", description: "" },
+    PLATINUM: {
       title: "Yes",
       description:
         "Receive personalized assistance from a dedicated account manager.",
@@ -355,15 +355,15 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Access dedicated support to assist you with any issues or questions. Our support team is here to help you succeed.",
     },
-    free: {
+    FREE: {
       title: "Community",
       description: "Get help from the community support forum.",
     },
-    gold: {
+    GOLD: {
       title: "Priority",
       description: "Receive priority support from our team.",
     },
-    platinum: {
+    PLATINUM: {
       title: "Priority",
       description: "Top-priority support for all your needs.",
     },
@@ -374,9 +374,9 @@ export const pricingFeatures: PricingFeature[] = [
       description:
         "Get started quickly with easy onboard access. Our intuitive interface and guided setup ensure you can start using the platform immediately.",
     },
-    free: { title: "-", description: "" },
-    gold: { title: "-", description: "" },
-    platinum: {
+    FREE: { title: "-", description: "" },
+    GOLD: { title: "-", description: "" },
+    PLATINUM: {
       title: "Yes",
       description:
         "Get assistance with onboarding to help you get started quickly.",
