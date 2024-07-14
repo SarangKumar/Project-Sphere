@@ -1,21 +1,15 @@
 import { getUserBySession } from "@/app/api/utils";
 import React from "react";
 import { Gauge } from "../guage";
-import { generateColorMap, interpolateColor } from "@/lib/utils";
 import { BACKWARD_COLORS } from "@/constants";
+import { getSubscriptionConfig } from "@/config/subscription";
 
 const SidebarStatus = async () => {
   const user = await getUserBySession({ project: true });
   if (!user) return null;
 
   const projectCount = user.projects.length;
-  const projectLimit = 8;
-
-  const colorMap = generateColorMap(
-    [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-    "green",
-    "red"
-  );
+  const projectLimit = getSubscriptionConfig(user.subscription).maxProjects;
 
   return (
     <div className="flex items-center justify-start gap-x-2 space-y-1 border-t px-4 py-4 text-sm md:px-6">
@@ -23,7 +17,7 @@ const SidebarStatus = async () => {
         className=""
         value={projectCount}
         max={projectLimit}
-        primary={colorMap}
+        primary={BACKWARD_COLORS}
         size="35px"
       />
 

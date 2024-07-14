@@ -22,17 +22,5 @@
     "isFavourite": false,
     "createdAt": "2024-07-11T13:53:57.203Z",
     "updatedAt": "2024-07-11T13:53:57.203Z"
-  },
-  {
-    "id": "668e9275812ee0a34e3341c3",
-    "title": "Project Gamma",
-    "description": "Third project description.",
-    "ownerId": "668e9275812ee0a34e3341b3",
-    "githubUrl": "http://github.com/SarangKumar/project-gamma",
-    "deployedUrl": "",
-    "isPrivate": true,
-    "isFavourite": true,
-    "createdAt": "2024-07-12T13:53:57.203Z",
-    "updatedAt": "2024-07-12T13:53:57.203Z"
   }
 ]

@@ -1,27 +1,5 @@
 import { PricingCardProps } from "@/components/pricing/pricing-card";
-import { interpolateColor } from "@/lib/utils";
-// import { PricingTablePlanProps } from "@/components/pricing/pricing-table";
-import { Folder, LayoutDashboard, Settings } from "lucide-react";
-
-export const dashboardSidebarLinks = [
-  {
-    title: "Dashboard",
-    icon: (
-      <LayoutDashboard size={24} className="size-5 shrink-0 @[60px]:size-5" />
-    ),
-    href: "/dashboard",
-  },
-  {
-    title: "Projects",
-    icon: <Folder size={24} className="size-5 shrink-0 @[60px]:size-5" />,
-    href: "/dashboard/project",
-  },
-  {
-    title: "Settings",
-    icon: <Settings size={24} className="size-5 shrink-0 @[60px]:size-5" />,
-    href: "/dashboard/settings",
-  },
-];
+import { generateColorMap } from "@/lib/utils";
 
 export const dashboardNavbarLinks = [
   {
@@ -50,19 +28,6 @@ export const dashboardNavbarLinks = [
       },
       {
         title: "API Reference",
-        href: "/docs/api",
-      },
-    ],
-  },
-  {
-    name: "Documentation 2",
-    links: [
-      {
-        title: "Guides 2",
-        href: "/docs/guides",
-      },
-      {
-        title: "API Reference 2",
         href: "/docs/api",
       },
     ],
@@ -119,8 +84,8 @@ export const pricingPlans: PricingCardProps[] = [
     pricingHeader: "Includes everything in Free, plus:",
     features: [
       {
-        title: "Unlimited project creation",
-        description: "Create and manage as many projects as you need.",
+        title: "Create up to 10 projects",
+        description: "Manage a more projects with ease using our basic tools.",
       },
       {
         title: "Priority-based task management",
@@ -157,6 +122,11 @@ export const pricingPlans: PricingCardProps[] = [
         description: "Includes all advanced features for a complete toolkit.",
       },
       {
+        title: "Create up to 30 projects",
+        description:
+          "Manage a more projects with ease using our advance tools.",
+      },
+      {
         title: "Priority support and onboarding assistance",
         description: "Get top-tier support and help getting started.",
       },
@@ -189,14 +159,13 @@ export const pricingPlans: PricingCardProps[] = [
     link: "https://buy.stripe.com/test_dR69Cm8xd1b6ggM5kk",
   },
 ];
+
 export interface PricingFeature {
   feature: { title: string; description: string };
   free: { title: string; description: string };
   gold: { title: string; description: string };
   platinum: { title: string; description: string };
 }
-
-export type Plans = "free" | "gold" | "platinum";
 
 export const pricingFeatures: PricingFeature[] = [
   {
@@ -210,13 +179,13 @@ export const pricingFeatures: PricingFeature[] = [
       description: "Manage a few projects with ease using our basic tools.",
     },
     gold: {
-      title: "Unlimited",
-      description: "Create and manage as many projects as you need.",
+      title: "Up to 10",
+      description: "Manage a more projects with ease using our modern tools.",
     },
     platinum: {
-      title: "Unlimited",
+      title: "Up to 30",
       description:
-        "Create and manage as many projects as you need with advanced features.",
+        "Manage a more projects with ease using our most advance tools.",
     },
   },
   {
@@ -433,16 +402,8 @@ export const pricingFaq = [
   },
 ];
 
-export const BACKWARD_COLORS = {
-  0: interpolateColor(0, "#022c22", "#e5484d"),
-  10: interpolateColor(10, "#022c22", "#e5484d"),
-  20: interpolateColor(20, "#022c22", "#e5484d"),
-  30: interpolateColor(30, "#022c22", "#e5484d"),
-  40: interpolateColor(40, "#022c22", "#e5484d"),
-  50: interpolateColor(50, "#022c22", "#e5484d"),
-  60: interpolateColor(60, "#022c22", "#e5484d"),
-  70: interpolateColor(70, "#022c22", "#e5484d"),
-  80: interpolateColor(80, "#022c22", "#e5484d"),
-  90: interpolateColor(90, "#022c22", "#e5484d"),
-  100: interpolateColor(100, "#022c22", "#e5484d"),
-};
+export const BACKWARD_COLORS = generateColorMap(
+  [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+  "green",
+  "red"
+);

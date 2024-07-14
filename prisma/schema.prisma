@@ -27,7 +27,7 @@ model User {
   password      String
   image         String?
   projects      Project[]
-  subscriptions SubscriptionTier @default(FREE)
+  subscription SubscriptionTier @default(FREE)
   isVerified    Boolean          @default(false)
 
   forgotPasswordToken       String?
