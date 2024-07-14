@@ -40,3 +40,26 @@ export const FormSchema = z.object({
     })
   ),
 });
+
+export const createProjectSchema = z.object({
+  title: z
+    .string()
+    .min(1, {
+      message: "Title is required.",
+    })
+    .min(2, {
+      message: "Title must be at least 2 characters.",
+    }),
+  description: z
+    .string()
+    .min(1, {
+      message: "Description is required.",
+    })
+    .min(16, {
+      message: "Description must be at least 16 characters.",
+    }),
+  isPrivate: z.boolean(),
+  isFavourite: z.boolean(),
+  githubUrl: z.string().optional(),
+  deployedUrl: z.string().optional(),
+});
