@@ -433,8 +433,15 @@
   body {
     @apply bg-background text-foreground;
   }
-}
+  .card {
+    @apply relative min-h-[380px] overflow-hidden rounded-lg border border-border bg-secondary/50 stroke-[0.1] p-4 text-secondary-foreground shadow-sm transition-all duration-200 hover:-translate-y-0 hover:border-foreground/20 hover:stroke-[0.15] hover:shadow-md md:p-8;
+  }
 
-.card {
-  @apply relative min-h-[380px] overflow-hidden rounded-lg border border-border bg-secondary/50 stroke-[0.1] p-4 text-secondary-foreground shadow-sm transition-all duration-200 hover:-translate-y-0 hover:border-foreground/20 hover:stroke-[0.15] hover:shadow-md md:p-8;
+  .project-link:hover {
+    @apply duration-300;
+  }
+
+  .project-link {
+    @apply duration-75;
+  }
 }

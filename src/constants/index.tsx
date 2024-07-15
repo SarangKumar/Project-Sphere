@@ -1,5 +1,13 @@
 import { PricingCardProps } from "@/components/pricing/pricing-card";
 import { generateColorMap } from "@/lib/utils";
+import {
+  Box,
+  Brain,
+  FilePlus2,
+  Globe,
+  LayoutList,
+  LucideHome,
+} from "lucide-react";
 
 export const dashboardNavbarLinks = [
   {
@@ -29,6 +37,54 @@ export const dashboardNavbarLinks = [
       {
         title: "API Reference",
         href: "/docs/api",
+      },
+    ],
+  },
+];
+
+export const projectSidebarLinks = [
+  {
+    name: "Home",
+    links: [
+      {
+        title: "Home",
+        href: "",
+        icon: <LucideHome size={18} className="stroke-[1.5]" />,
+      },
+    ],
+  },
+  {
+    name: "Tasks",
+    links: [
+      {
+        title: "Todo",
+        href: "/todo",
+        icon: <LayoutList size={18} className="stroke-[1.5]" />,
+      },
+      {
+        title: "Docs",
+        href: "/documentation",
+        icon: <FilePlus2 size={18} className="stroke-[1.5]" />,
+      },
+    ],
+  },
+  {
+    name: "Scrape",
+    links: [
+      {
+        title: "Web Scrape",
+        icon: <Globe size={18} className="stroke-[1.5]" />,
+        href: "/web-scrape",
+      },
+      {
+        title: "AI Assistance",
+        icon: <Brain size={18} className="stroke-[1.5]" />,
+        href: "/ai-assistance",
+      },
+      {
+        title: "Package Finder",
+        icon: <Box size={18} className="stroke-[1.5]" />,
+        href: "/packege",
       },
     ],
   },

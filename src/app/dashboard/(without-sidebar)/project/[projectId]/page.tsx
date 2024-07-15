@@ -1,4 +1,5 @@
 import { getUserBySession } from "@/app/api/utils";
+import ProjectSidebar from "@/components/dashboad/project/project-sidebar";
 import React from "react";
 
 export async function generateMetadata({
@@ -39,8 +40,8 @@ const ProjectPage = async ({
 
   if (!isProjectThere) return null;
   return (
-    <div className="text-sm">
-      ProjectPage {projectId} {JSON.stringify(user)}
+    <div className="">
+      {projectId} {JSON.stringify(user, null, 1)}
     </div>
   );
 };

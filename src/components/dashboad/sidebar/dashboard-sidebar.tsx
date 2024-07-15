@@ -46,7 +46,7 @@ const DashboardSidebar = ({ className }: { className?: string }) => {
           </menu>
         ))}
       </div>
-      <SidebarStatus />
+      <SidebarStatus className="p-4" />
     </aside>
   );
 };
@@ -69,7 +69,7 @@ export const DashboardSidebarMain = () => {
         </Sheet>
       </div>
       <div className="hidden md:block">
-        <DashboardSidebar />
+        <DashboardSidebar className="border-t" />
       </div>
     </aside>
   );
