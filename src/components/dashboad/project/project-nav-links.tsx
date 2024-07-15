@@ -6,11 +6,13 @@ import React from "react";
 
 const ProjectNavLinks = ({
   projectId,
+  disableLinks,
   href,
   title,
   icon,
 }: {
   projectId: string;
+  disableLinks: boolean;
   title: string;
   href: string;
   icon?: React.ReactNode;
@@ -25,7 +27,8 @@ const ProjectNavLinks = ({
         href={href}
         className={cn(
           "justify-cente flex items-center gap-x-2 rounded p-2.5 transition-colors @container hover:bg-secondary/40",
-          isActive && "bg-secondary/40"
+          isActive && "bg-secondary/40",
+          disableLinks && "pointer-events-none cursor-not-allowed"
         )}
       >
         <span

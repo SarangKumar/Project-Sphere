@@ -3,10 +3,24 @@ import React from "react";
 import ProjectNavLinks from "./project-nav-links";
 import Logo from "@/components/logo";
 import SidebarStatus from "../sidebar/sidebar-status";
+import { cn } from "@/lib/utils";
 
-const ProjectSidebar = ({ projectId }: { projectId: string }) => {
+const ProjectSidebar = ({
+  projectId,
+  disableLinks = false,
+  className,
+}: {
+  projectId: string;
+  disableLinks: boolean;
+  className?: string;
+}) => {
   return (
-    <div className="sticky top-0 flex h-dvh w-14 flex-col justify-between border-r bg-background p-2 transition-all duration-300 hover:w-56">
+    <div
+      className={cn(
+        "fixed top-0 flex h-full w-14 flex-col justify-between overflow-y-hidden border-r bg-background p-2 transition-all hover:w-56",
+        className
+      )}
+    >
       <div>
         <Logo className="size-10" />
         {projectSidebarLinks.map((sidebartheme) => (
@@ -16,6 +30,7 @@ const ProjectSidebar = ({ projectId }: { projectId: string }) => {
           >
             {sidebartheme.links.map((link) => (
               <ProjectNavLinks
+                disableLinks={disableLinks}
                 key={link.title}
                 href={link.href}
                 projectId={projectId}

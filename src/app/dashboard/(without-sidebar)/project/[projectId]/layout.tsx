@@ -4,7 +4,6 @@ import { siteConfig } from "@/config/site";
 import ProjectSidebar from "@/components/dashboad/project/project-sidebar";
 import { getUserBySession } from "@/app/api/utils";
 import ProjectHeader from "@/components/dashboad/project/project-header";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const metadata: Metadata = {
   title: {
@@ -36,8 +35,8 @@ const DashboardProjectsLayout = async ({
 
   return (
     <div className="relative flex w-full">
-      <aside className="relative">
-        <ProjectSidebar projectId={projectId} />
+      <aside className="sticky top-0">
+        <ProjectSidebar projectId={projectId} className="sticky bg-fixed" />
       </aside>
 
       <div className="h-dvh w-full">
