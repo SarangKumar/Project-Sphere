@@ -1,12 +1,5 @@
 import { getUserBySession } from "@/app/api/utils";
-import ProjectSidebar from "@/components/dashboad/project/project-sidebar";
 import React from "react";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 export async function generateMetadata({
   params: { projectId },

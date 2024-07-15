@@ -63,3 +63,10 @@ export const createProjectSchema = z.object({
   githubUrl: z.string().optional(),
   deployedUrl: z.string().optional(),
 });
+
+export const createSharelinkSchema = z.object({
+  name: z.string().min(1, { message: "Name is required." }),
+  expiresAt: z.date(),
+  role: z.enum(["VIEWER", "EDITOR"]),
+  projectId: z.string(),
+});

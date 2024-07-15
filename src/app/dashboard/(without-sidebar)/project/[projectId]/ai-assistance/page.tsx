@@ -1,7 +1,11 @@
 import React from "react";
 
-function AiAssistancePage() {
-  return <div>Ai Assistance Page</div>;
+function AiAssistancePage({
+  params: { projectId },
+}: {
+  params: { projectId: string };
+}) {
+  return <div>Ai Assistance Page {projectId}</div>;
 }
 
 export default AiAssistancePage;

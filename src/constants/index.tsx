@@ -7,6 +7,7 @@ import {
   Globe,
   LayoutList,
   LucideHome,
+  Settings,
   Share2,
 } from "lucide-react";
 
@@ -85,17 +86,17 @@ export const projectSidebarLinks = [
       {
         title: "Package Finder",
         icon: <Box size={18} className="stroke-[1.5]" />,
-        href: "/packege",
+        href: "/package",
       },
     ],
   },
   {
-    name: "Share",
+    name: "Settings",
     links: [
       {
-        title: "Share Projects",
-        icon: <Share2 size={18} className="stroke-[1.5]" />,
-        href: "/share",
+        title: "Settings",
+        icon: <Settings size={18} className="stroke-[1.5]" />,
+        href: "/settings",
       },
     ],
   },
