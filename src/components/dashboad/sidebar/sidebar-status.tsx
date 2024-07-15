@@ -4,6 +4,7 @@ import { Gauge } from "../guage";
 import { BACKWARD_COLORS } from "@/constants";
 import { getSubscriptionConfig } from "@/config/subscription";
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 const SidebarStatus = async ({ className }: { className?: string }) => {
   const user = await getUserBySession({ project: true });
@@ -34,7 +35,7 @@ const SidebarStatus = async ({ className }: { className?: string }) => {
         )}
       >
         <span className="w-full truncate whitespace-nowrap text-xs md:text-sm">
-          {user.name}
+          {user.name} {user.subscription}
         </span>
         <span className="line-clamp-1 truncate whitespace-nowrap text-xs text-secondary-foreground">
           {user.email}

@@ -5,14 +5,15 @@ import BoringAvatar from "boring-avatars";
 import { ChevronRight, Github, Globe, LockKeyhole } from "lucide-react";
 import { cn, formatDate } from "@/lib/utils";
 import { buttonVariants } from "../../ui/button";
+import MarkFavouriteButton from "./mark-favourite-button";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <li className="relative list-none">
-      <Link
+      {/* <Link
         className="absolute z-10 h-full w-full"
         href={`/dashboard/project/${project.id}`}
-      ></Link>
+      ></Link> */}
       <div className="group relative flex h-[184px] cursor-pointer rounded-md border bg-secondary/40 p-5 pb-4 text-left transition duration-150 ease-in-out hover:border-foreground/20 hover:bg-secondary/80">
         <div className="flex w-full flex-col gap-y-2">
           <div className="flex items-center justify-between gap-x-4">
@@ -84,6 +85,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
                   <Globe className="rounded-full p-1" />
                 </a>
               )}
+              <MarkFavouriteButton
+                projectId={project.id}
+                isFavourite={project.isFavourite}
+              />
             </div>
           </div>
         </div>

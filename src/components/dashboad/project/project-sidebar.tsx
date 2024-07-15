@@ -11,7 +11,7 @@ const ProjectSidebar = ({
   className,
 }: {
   projectId: string;
-  disableLinks: boolean;
+  disableLinks?: boolean;
   className?: string;
 }) => {
   return (
