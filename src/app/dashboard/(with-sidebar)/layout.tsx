@@ -22,7 +22,7 @@ const DashboardLayout = ({
 }>) => {
   return (
     <div className="flex">
-      <DashboardSidebar className="" />
+      <DashboardSidebar className="border-t" />
       <main className="flex-1">{children}</main>
     </div>
   );

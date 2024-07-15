@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import ProjectSidebar from "@/components/dashboad/project/project-sidebar";
 import { getUserBySession } from "@/app/api/utils";
+import ProjectHeader from "@/components/dashboad/project/project-header";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const metadata: Metadata = {
   title: {
@@ -23,23 +25,24 @@ const DashboardProjectsLayout = async ({
   children: React.ReactNode;
   params: { projectId: string };
 }>) => {
-  const user = await getUserBySession({ project: false });
+  const user = await getUserBySession({ project: true });
 
   if (!user) return <>User not found</>;
+  const currentProject = user.projects.find(
+    (project) => project.id === projectId
+  );
+
+  if (!currentProject) return <>No project available</>;
+
   return (
-    <div className="flex">
-      <aside className="sticky top-0">
+    <div className="relative flex w-full">
+      <aside className="relative">
         <ProjectSidebar projectId={projectId} />
       </aside>
 
-      <div className="h-dvh w-full overflow-y-auto">
-        <nav className="sticky top-0 h-12 border-b bg-background px-6 py-4 text-xs text-secondary-foreground">
-          {user.name}
-        </nav>
-        <main className="p-6 text-sm md:px-6">
-          {/* {projectId} {JSON.stringify(user, null, 1)} */}
-          {children}
-        </main>
+      <div className="h-dvh w-full">
+        <ProjectHeader project={currentProject} />
+        <div className="h-auto text-sm">{children}</div>
       </div>
     </div>
   );

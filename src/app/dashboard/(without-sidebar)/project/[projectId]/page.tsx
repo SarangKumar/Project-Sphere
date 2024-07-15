@@ -1,6 +1,12 @@
 import { getUserBySession } from "@/app/api/utils";
 import ProjectSidebar from "@/components/dashboad/project/project-sidebar";
 import React from "react";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export async function generateMetadata({
   params: { projectId },
@@ -11,15 +17,13 @@ export async function generateMetadata({
 
   if (!user) return null;
 
-  const isProjectThere = user.projects.find(
-    (project) => project.id === projectId
-  );
+  const project = user.projects.find((project) => project.id === projectId);
 
-  if (!isProjectThere) return null;
+  if (!project) return null;
 
   return {
-    title: isProjectThere.title,
-    description: isProjectThere.description || "",
+    title: project.title,
+    description: project.description || "",
     url: `/dashboard/project/${projectId}`,
   };
 }
@@ -33,15 +37,24 @@ const ProjectPage = async ({
 
   if (!user) return null;
 
-  const isProjectThere = user.projects.find(
-    (project) => project.id === projectId
-  );
-  console.log(!!isProjectThere);
+  const project = user.projects.find((project) => project.id === projectId);
 
-  if (!isProjectThere) return null;
+  if (!project) return null;
+
   return (
-    <div className="">
-      {projectId} {JSON.stringify(user, null, 1)}
+    <div className="h-full p-4 text-sm md:p-6">
+      {/* <ResizablePanelGroup direction="horizontal" className="">
+        <ResizablePanel defaultSize={60} className="p-6">
+          {project.id}
+        </ResizablePanel>
+        <ResizableHandle withHandle />
+        <ResizablePanel defaultSize={40} className="max-w-md text-xs rounded p-6">
+          <ScrollArea>
+          </ScrollArea>
+          </ResizablePanel>
+          </ResizablePanelGroup> */}
+
+      {JSON.stringify(user.projects, null, 1)}
     </div>
   );
 };

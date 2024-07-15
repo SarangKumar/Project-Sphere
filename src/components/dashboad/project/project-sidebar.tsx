@@ -6,7 +6,7 @@ import SidebarStatus from "../sidebar/sidebar-status";
 
 const ProjectSidebar = ({ projectId }: { projectId: string }) => {
   return (
-    <div className="flex h-dvh w-14 flex-col justify-between border-r bg-background p-2 transition-all duration-300 hover:w-56">
+    <div className="sticky top-0 flex h-dvh w-14 flex-col justify-between border-r bg-background p-2 transition-all duration-300 hover:w-56">
       <div>
         <Logo className="size-10" />
         {projectSidebarLinks.map((sidebartheme) => (

@@ -113,7 +113,7 @@ export function CreateProject({ userId }: { userId: string }) {
                 <Input
                   disabled={loading}
                   type="url"
-                  placeholder="Description"
+                  placeholder="https://www.example.com"
                   {...field}
                 />
               </FormControl>

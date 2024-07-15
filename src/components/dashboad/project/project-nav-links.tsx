@@ -28,8 +28,20 @@ const ProjectNavLinks = ({
           isActive && "bg-secondary/40"
         )}
       >
-        <span className="size-5 shrink-0">{icon}</span>
-        <span className="@[2rem] project-link flex-1 -translate-x-3 whitespace-nowrap text-xs text-secondary-foreground opacity-0 transition-all @[2rem]:translate-x-0 @[2rem]:opacity-100">
+        <span
+          className={cn(
+            "size-5 shrink-0 text-secondary-foreground",
+            isActive && "text-foreground"
+          )}
+        >
+          {icon}
+        </span>
+        <span
+          className={cn(
+            "@[2rem] project-link flex-1 -translate-x-3 whitespace-nowrap text-xs text-secondary-foreground opacity-0 transition-all @[2rem]:translate-x-0 @[2rem]:opacity-100",
+            isActive && "text-foreground"
+          )}
+        >
           {title}
         </span>
       </Link>
