@@ -15,6 +15,8 @@ export async function POST(req: NextRequest) {
     projectId,
   } = body;
 
+  console.log(body);
+
   try {
     const project = await prisma.project.update({
       where: {

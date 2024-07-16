@@ -184,14 +184,16 @@ const config = {
               display: theme("block"),
             },
             ol: {
-              fontSize: theme("fontSize.base"),
-              marginBottom: theme("spacing.4"),
+              fontSize: theme("fontSize.sm"),
+              marginBottom: theme("spacing.3"),
             },
             ul: {
-              fontSize: theme("fontSize.base"),
-              marginBottom: theme("spacing.4"),
+              fontSize: theme("fontSize.sm"),
+              marginBottom: theme("spacing.3"),
             },
-            li: { marginBottom: theme("spacing.2") },
+            li: {
+              marginBottom: theme("spacing.2"),
+            },
             table: {
               fontSize: theme("fontSize.base"),
               marginBottom: theme("spacing.4"),

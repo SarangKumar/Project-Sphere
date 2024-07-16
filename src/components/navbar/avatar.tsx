@@ -7,10 +7,12 @@ const Avatar = ({
   image,
   name,
   size,
+  className,
 }: {
   image: string;
   name: string;
   size: "base" | "sm" | "lg";
+  className?: string;
 }) => {
   return (
     <>
@@ -21,7 +23,8 @@ const Avatar = ({
               "absolute flex h-full w-full items-center justify-center rounded-full border border-primary/20 font-medium shadow",
               size === "sm" && "h-6 w-6 text-xs",
               size === "base" && "h-8 w-8 text-sm",
-              size === "lg" && "h-12 w-12 text-lg"
+              size === "lg" && "h-12 w-12 text-lg",
+              className
             )}
           >
             {getInitials(name || "Guest")}
