@@ -1,4 +1,5 @@
 import { getUserBySession } from "@/app/api/utils";
+import { Gauge } from "@/components/dashboad/guage";
 import TaskStatusCard from "@/components/dashboad/project/task/task-status-card";
 import Avatar from "@/components/navbar/avatar";
 import { buttonVariants } from "@/components/ui/button";
@@ -29,6 +30,8 @@ export async function generateMetadata({
   };
 }
 
+const collaboratorCount = 7;
+
 const ProjectPage = async ({
   params: { projectId },
 }: {
@@ -48,6 +51,10 @@ const ProjectPage = async ({
   });
   if (!project) return null;
 
+  const taskCompleted = project.tasks.filter(
+    (task) => task.status === "COMPLETED"
+  ).length;
+
   return (
     <div className="h-full space-y-4 p-4 text-sm md:p-6">
       <div className="project-bg relative mb-8 flex h-60 w-full flex-col justify-between overflow-hidden rounded-md border bg-cover p-2 md:p-4">
@@ -56,10 +63,53 @@ const ProjectPage = async ({
             {project.title}
           </h1>
         </div>
-        <div className="flex items-end justify-end gap-x-2">
-          <span className="text-[10px] italic text-secondary-foreground md:text-xs">
-            Created: {formatDate(project.createdAt)}
-          </span>
+        <div className="flex items-end justify-between gap-x-2">
+          <div className="flex items-center gap-x-1">
+            <Gauge
+              value={taskCompleted}
+              max={project.tasks.length}
+              size={26}
+              primary="info"
+            />
+            <Gauge
+              value={2}
+              max={project.tasks.length}
+              size={26}
+              primary="info"
+            />
+            <Gauge
+              value={3}
+              max={project.tasks.length}
+              size={26}
+              primary="info"
+            />
+            <Gauge
+              value={4}
+              max={project.tasks.length}
+              size={26}
+              primary="info"
+            />
+            <Gauge
+              value={5}
+              max={project.tasks.length}
+              size={26}
+              primary="info"
+            />
+            <Gauge
+              value={6}
+              max={project.tasks.length}
+              size={26}
+              primary="info"
+            />
+          </div>
+          <div className="-gap-y-0.5 flex flex-col">
+            <span className="text-[10px] italic leading-[10px] text-secondary-foreground md:text-xs">
+              Created: {formatDate(project.createdAt)}
+            </span>
+            <span className="text-[10px] italic leading-[10px] text-secondary-foreground md:text-xs">
+              Modified: {formatDate(project.updatedAt)}
+            </span>
+          </div>
         </div>
       </div>
       <div className="mb-4 flex flex-col justify-between gap-5 md:flex-row md:items-center">
@@ -80,7 +130,7 @@ const ProjectPage = async ({
           </Link>
         </h1>
         <div className="flex items-center gap-x-4">
-          <div className="flex -space-x-1">
+          <div className="flex -space-x-2">
             <Avatar
               name={project.owner.name}
               image={project.owner.image || ""}
