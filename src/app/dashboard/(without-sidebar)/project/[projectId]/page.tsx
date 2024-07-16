@@ -50,14 +50,14 @@ const ProjectPage = async ({
 
   return (
     <div className="h-full space-y-4 p-4 text-sm md:p-6">
-      <div className="project-bg md:p-4relative mb-8 flex h-60 w-full flex-col justify-between overflow-hidden rounded-md border bg-cover p-2">
+      <div className="project-bg relative mb-8 flex h-60 w-full flex-col justify-between overflow-hidden rounded-md border bg-cover p-2 md:p-4">
         <div className="flex-1">
           <h1 className="bg-gradient-to-r from-secondary-foreground from-[10%] to-foreground/60 bg-clip-text text-xl font-bold text-transparent md:text-2xl">
             {project.title}
           </h1>
         </div>
         <div className="flex items-end justify-end gap-x-2">
-          <span className="text-xxs text-secondary-foreground md:text-xs">
+          <span className="text-[10px] italic text-secondary-foreground md:text-xs">
             Created: {formatDate(project.createdAt)}
           </span>
         </div>
@@ -127,7 +127,7 @@ const ProjectPage = async ({
       </div>
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3">
         <section className="xl:col-span-2">
-          <p className="text-sm md:text-base">{project.description}</p>
+          <p className="text-xs sm:text-sm">{project.description}</p>
         </section>
         <section className="grid grid-cols-1 gap-4">
           <div className="flex items-center justify-between">
@@ -153,7 +153,7 @@ const ProjectPage = async ({
               buttonVariants({
                 variant: "dashed",
                 size: "lg",
-                className: "font-normal",
+                className: "text-xs font-normal",
               })
             )}
           >

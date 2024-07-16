@@ -18,9 +18,9 @@ function TaskStatusCard({
   projectName: string;
 }) {
   return (
-    <div className="space-y-1 rounded-md border border-border px-4 py-4 transition-colors hover:border-foreground/40 hover:bg-secondary/10 md:px-6 md:py-4">
+    <div className="space-y-1 rounded-md border border-border px-4 py-2 transition-colors hover:border-foreground/40 hover:bg-secondary/10">
       <div className="flex items-center justify-between">
-        <span className="font-medium text-secondary-foreground">
+        <span className="text-xs font-medium text-secondary-foreground">
           Project: {projectName}
         </span>
         <TaskStatusText status={task.status} />
@@ -31,18 +31,17 @@ function TaskStatusCard({
         className="group flex items-center justify-between"
       >
         <AccordionItem value="item-1" className="w-full border-0">
-          <AccordionTrigger className="truncate border-0 pb-1 pt-0 text-left text-sm">
+          <AccordionTrigger className="truncate border-0 pb-1 pt-0 text-left text-xs">
             {task.title}
           </AccordionTrigger>
           <AccordionContent>
-            {/* <MarkdownRender md={task.description || ""} /> */}
             <MarkdownRender>{task.description || ""}</MarkdownRender>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
       <div className="flex items-center justify-between">
         <div>
-          <span className="text-xs text-secondary-foreground">
+          <span className="text-[10px] text-secondary-foreground">
             Created: {formatDate(task.createdAt)}
           </span>
           {/* <span className="text-xs text-secondary-foreground">
@@ -50,7 +49,7 @@ function TaskStatusCard({
           </span> */}
         </div>
         {task.estimatedTimeForCompletion && (
-          <span className="flex items-center gap-x-1 text-xs text-secondary-foreground">
+          <span className="flex items-center gap-x-1 text-[12px] text-secondary-foreground">
             <Clock5 size={14} />
             {task.estimatedTimeForCompletion}{" "}
             {task.estimatedTimeForCompletion >= 1 ? "hr" : "hrs"}
@@ -73,9 +72,11 @@ export function TaskStatusText({ status }: { status: TaskStatus }) {
   if (!task) return null;
 
   return (
-    <span className="flex items-center gap-x-2 text-xs font-semibold capitalize">
+    <span className="flex items-center gap-x-2 rounded-full border px-2 py-[1px]">
       <span className={cn("size-2 rounded-full", task.color)}></span>
-      {task.text}
+      <span className="text-[10px] font-semibold capitalize md:text-xs md:font-medium">
+        {task.text}
+      </span>
     </span>
   );
 }
