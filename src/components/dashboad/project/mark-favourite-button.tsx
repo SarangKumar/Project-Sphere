@@ -1,11 +1,8 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import prisma from "@/lib/prisma";
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import { Loader2, Star } from "lucide-react";
-import { revalidatePath } from "next/cache";
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { toast } from "sonner";
 
@@ -17,7 +14,7 @@ const MarkFavouriteButton = ({
   isFavourite: boolean;
 }) => {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  const [favourite, setFavourite] = useState(isFavourite);
 
   const handleFavourite = async () => {
     setLoading(true);
@@ -27,12 +24,12 @@ const MarkFavouriteButton = ({
       });
 
       if (response.data.success) {
+        setFavourite((prev) => !prev);
         if (response.data.data.isFavourite) {
           toast.success("Project marked as favourite");
         } else {
           toast.success("Project marked as not favourite");
         }
-        router.refresh();
       } else {
         toast.error("Failed to mark project as favourite");
       }
@@ -42,27 +39,30 @@ const MarkFavouriteButton = ({
       setLoading(false);
     }
   };
+
   return (
-    <Button
-      variant="ghost"
-      onClick={handleFavourite}
-      className="border"
-      size="icon"
-    >
-      {loading ? (
-        <Loader2 size={14} className="animate-spin" />
-      ) : (
-        <>
-          <Star
-            className={cn("", isFavourite ? "fill-primary stroke-primary" : "")}
-            size={14}
-          />
-          <span className="sr-only">
-            {isFavourite ? "Marked favourite" : "Marked not favourite"}
-          </span>
-        </>
-      )}
-    </Button>
+    <>
+      <Button
+        variant="ghost"
+        onClick={handleFavourite}
+        className="z-20 h-8 w-8 border"
+        size="icon"
+      >
+        {loading ? (
+          <Loader2 size={16} className="animate-spin" />
+        ) : (
+          <>
+            <Star
+              className={cn("", favourite ? "fill-primary stroke-primary" : "")}
+              size={14}
+            />
+            <span className="sr-only">
+              {favourite ? "Marked favourite" : "Marked not favourite"}
+            </span>
+          </>
+        )}
+      </Button>
+    </>
   );
 };
 

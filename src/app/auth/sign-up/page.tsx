@@ -19,40 +19,43 @@ const SignUpPage = () => {
         <p className="text-sm text-secondary-foreground">
           Create a new account
         </p>
-        <div className="my-6 space-y-4">
-          <SignInButton
-            variant="outline"
-            size="lg"
-            className="flex w-full min-w-60 items-center gap-x-2 font-medium"
-            provider="google"
-          >
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 488 512"
-              height="18px"
-              className="stroke-secondary-foreground stroke-2 text-muted-foreground"
-              width="18px"
-              xmlns="http://www.w3.org/2000/svg"
+
+        {process.env.NODE_ENV !== "production" && (
+          <div className="my-6 space-y-4">
+            <SignInButton
+              variant="outline"
+              size="lg"
+              className="flex w-full min-w-60 items-center gap-x-2 font-medium"
+              provider="google"
             >
-              <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path>
-            </svg>
-            Continue with Google
-          </SignInButton>
-          <SignInButton
-            className="flex w-full min-w-60 items-center gap-x-2 font-medium"
-            variant="outline"
-            size="lg"
-            provider="github"
-          >
-            <GithubIcon
-              size={18}
-              className="stroke-secondary-foreground stroke-2 text-muted-foreground"
-            />
-            Continue with Github
-          </SignInButton>
-        </div>
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth="0"
+                viewBox="0 0 488 512"
+                height="18px"
+                className="stroke-secondary-foreground stroke-2 text-muted-foreground"
+                width="18px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path>
+              </svg>
+              Continue with Google
+            </SignInButton>
+            <SignInButton
+              className="flex w-full min-w-60 items-center gap-x-2 font-medium"
+              variant="outline"
+              size="lg"
+              provider="github"
+            >
+              <GithubIcon
+                size={18}
+                className="stroke-secondary-foreground stroke-2 text-muted-foreground"
+              />
+              Continue with Github
+            </SignInButton>
+          </div>
+        )}
 
         <div className="relative text-center text-xs">
           <span className="z-10 bg-background px-1">or</span>

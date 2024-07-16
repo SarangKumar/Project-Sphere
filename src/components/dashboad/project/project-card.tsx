@@ -10,10 +10,10 @@ import MarkFavouriteButton from "./mark-favourite-button";
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <li className="relative list-none">
-      {/* <Link
+      <Link
         className="absolute z-10 h-full w-full"
         href={`/dashboard/project/${project.id}`}
-      ></Link> */}
+      ></Link>
       <div className="group relative flex h-[184px] cursor-pointer rounded-md border bg-secondary/40 p-5 pb-4 text-left transition duration-150 ease-in-out hover:border-foreground/20 hover:bg-secondary/80">
         <div className="flex w-full flex-col gap-y-2">
           <div className="flex items-center justify-between gap-x-4">
@@ -54,7 +54,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <span className="text-xs font-medium text-secondary-foreground">
               {formatDate(project.createdAt)}
             </span>
-            <div className="space-x-2">
+            <div className="flex items-center space-x-2">
               {project.githubUrl && (
                 <a
                   href={project.githubUrl}
@@ -62,7 +62,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     buttonVariants({
                       variant: "ghost",
                       size: "icon",
-                      className: "border",
+                      className: "h-8 w-8 border",
                     })
                   )}
                 >
@@ -77,7 +77,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     buttonVariants({
                       variant: "ghost",
                       size: "icon",
-                      className: "border",
+                      className: "h-8 w-8 border",
                     })
                   )}
                 >
