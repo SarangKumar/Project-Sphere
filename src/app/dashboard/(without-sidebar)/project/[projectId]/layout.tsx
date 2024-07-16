@@ -34,12 +34,10 @@ const DashboardProjectsLayout = async ({
   if (!currentProject) return <>No project available</>;
 
   return (
-    <div className="relative flex w-full">
-      <aside className="sticky top-0">
-        <ProjectSidebar projectId={projectId} className="sticky bg-fixed" />
-      </aside>
+    <div className="relative flex">
+      <ProjectSidebar projectId={projectId} className="" />
 
-      <div className="h-dvh w-full">
+      <div className="w-full">
         <ProjectHeader project={currentProject} />
         <div className="h-auto text-sm">{children}</div>
       </div>

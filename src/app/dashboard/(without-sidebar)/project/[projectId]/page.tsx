@@ -49,6 +49,7 @@ const ProjectPage = async ({
         <section className="xl:col-span-2">{project?.title}</section>
         <section className="grid grid-cols-1 gap-4">
           {/* {JSON.stringify(project?.tasks)} */}
+          <h2 className="text-lg font-bold">Tasks ({project?.tasks.length})</h2>
           {project?.tasks.map((task) => (
             <TaskStatusCard
               projectName={project.title}

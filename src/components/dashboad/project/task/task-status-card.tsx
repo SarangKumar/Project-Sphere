@@ -31,8 +31,8 @@ function TaskStatusCard({
         className="group flex items-center justify-between"
       >
         <AccordionItem value="item-1" className="w-full border-0">
-          <AccordionTrigger className="truncate border-0 pb-1 pt-0 text-left">
-            {task.description}
+          <AccordionTrigger className="truncate border-0 pb-1 pt-0 text-left text-sm">
+            {task.title}
           </AccordionTrigger>
           <AccordionContent>
             {/* <MarkdownRender md={task.description || ""} /> */}
