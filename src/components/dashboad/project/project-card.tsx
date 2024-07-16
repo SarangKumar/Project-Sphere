@@ -11,10 +11,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <li className="relative list-none">
       <Link
-        className="absolute z-10 h-full w-full"
+        className="absolute z-10 h-1/2 w-full"
         href={`/dashboard/project/${project.id}`}
       ></Link>
-      <div className="group relative flex h-[184px] cursor-pointer rounded-md border bg-secondary/40 p-5 pb-4 text-left transition duration-150 ease-in-out hover:border-foreground/20 hover:bg-secondary/80">
+      <div className="hover:red-500 group relative flex h-[184px] cursor-pointer rounded-md border bg-secondary/40 p-5 pb-4 text-left transition duration-150 ease-in-out hover:border-foreground/20 hover:bg-secondary/80">
         <div className="flex w-full flex-col gap-y-2">
           <div className="flex items-center justify-between gap-x-4">
             <BoringAvatar size="32" name={project.title} />

@@ -17,8 +17,6 @@ const DashboardLoading = () => {
             <SkeletonProjectCard />
             <SkeletonProjectCard />
             <SkeletonProjectCard />
-            <SkeletonProjectCard />
-            <SkeletonProjectCard />
           </div>
         </div>
       </main>

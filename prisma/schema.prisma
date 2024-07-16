@@ -51,17 +51,24 @@ model Project {
   ownerId String @db.ObjectId
   owner   User   @relation(fields: [ownerId], references: [id])
 
-  tasks Task[] // One-to-many relation to Task model
+  tasks Task[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+}
+
 model Task {
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
-  title       String
-  description String?
-  isCompleted Boolean @default(false)
+  id                         String     @id @default(auto()) @map("_id") @db.ObjectId
+  title                      String
+  description                String?
+  status                     TaskStatus
+  estimatedTimeForCompletion Int?
 
   projectId String  @db.ObjectId
   project   Project @relation(fields: [projectId], references: [id])

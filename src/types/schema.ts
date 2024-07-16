@@ -58,6 +58,12 @@ export const createProjectSchema = z.object({
     .min(16, {
       message: "Description must be at least 16 characters.",
     }),
+  topics: z.array(
+    z.object({
+      id: z.string(),
+      text: z.string(),
+    })
+  ),
   isPrivate: z.boolean(),
   isFavourite: z.boolean(),
   githubUrl: z.string().optional(),

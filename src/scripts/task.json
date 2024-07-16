@@ -2,8 +2,9 @@
   {
     "id": "64b9f5d3e6e5f12345678903",
     "title": "Initial Setup",
-    "description": "Set up the initial project structure with Next.js and TypeScript",
-    "isCompleted": true,
+    "description": "# Set up the initial project structure with Next.js and TypeScript \n ## Heading 2 \n - option 1 \n -option 2 \n - options 3",
+    "status": "PENDING",
+    "estimatedTimeForCompletion": 1,
     "projectId": "668e9275812ee0a34e3341c1",
     "createdAt": "2024-07-12T14:00:00.000Z",
     "updatedAt": "2024-07-12T14:00:00.000Z"
@@ -12,7 +13,8 @@
     "id": "64b9f5d3e6e5f12345678904",
     "title": "Add Authentication",
     "description": "Implement authentication using NextAuth",
-    "isCompleted": false,
+    "status": "IN_PROGRESS",
+    "estimatedTimeForCompletion": 1,
     "projectId": "668e9275812ee0a34e3341c1",
     "createdAt": "2024-07-12T14:10:00.000Z",
     "updatedAt": "2024-07-12T14:10:00.000Z"
@@ -21,7 +23,8 @@
     "id": "64b9f5d3e6e5f12345678905",
     "title": "Create Landing Page",
     "description": "Design and develop the landing page for the project",
-    "isCompleted": false,
+    "status": "COMPLETED",
+    "estimatedTimeForCompletion": 1,
     "projectId": "668e9275812ee0a34e3341c1",
     "createdAt": "2024-07-12T15:00:00.000Z",
     "updatedAt": "2024-07-12T15:00:00.000Z"
@@ -30,7 +33,8 @@
     "id": "64b9f5d3e6e5f12345678906",
     "title": "Set Up Database",
     "description": "Configure MongoDB and set up initial schema",
-    "isCompleted": true,
+    "status": "PENDING",
+    "estimatedTimeForCompletion": 1,
     "projectId": "668e9275812ee0a34e3341c1",
     "createdAt": "2024-07-12T15:30:00.000Z",
     "updatedAt": "2024-07-12T15:30:00.000Z"
@@ -39,7 +43,8 @@
     "id": "64b9f5d3e6e5f12345678907",
     "title": "Implement User Profile",
     "description": "Develop user profile page with editable fields",
-    "isCompleted": false,
+    "status": "PENDING",
+    "estimatedTimeForCompletion": 1,
     "projectId": "668e9275812ee0a34e3341c1",
     "createdAt": "2024-07-12T16:00:00.000Z",
     "updatedAt": "2024-07-12T16:00:00.000Z"
@@ -48,7 +53,8 @@
     "id": "64b9f5d3e6e5f12345678908",
     "title": "Create API Endpoints",
     "description": "Set up API routes for CRUD operations",
-    "isCompleted": false,
+    "status": "PENDING",
+    "estimatedTimeForCompletion": 1,
     "projectId": "668e9275812ee0a34e3341c1",
     "createdAt": "2024-07-12T16:30:00.000Z",
     "updatedAt": "2024-07-12T16:30:00.000Z"
@@ -57,8 +63,9 @@
     "id": "64b9f5d3e6e5f12345678909",
     "title": "Implement Authorization",
     "description": "Add role-based access control to the application",
-    "isCompleted": false,
     "projectId": "668e9275812ee0a34e3341c2",
+    "status": "PENDING",
+    "estimatedTimeForCompletion": 1,
     "createdAt": "2024-07-12T17:00:00.000Z",
     "updatedAt": "2024-07-12T17:00:00.000Z"
   },
@@ -66,7 +73,8 @@
     "id": "64b9f5d3e6e5f12345678910",
     "title": "Integrate Stripe",
     "description": "Set up Stripe for handling subscriptions and payments",
-    "isCompleted": false,
+    "status": "PENDING",
+    "estimatedTimeForCompletion": 1,
     "projectId": "668e9275812ee0a34e3341c2",
     "createdAt": "2024-07-12T17:30:00.000Z",
     "updatedAt": "2024-07-12T17:30:00.000Z"
@@ -75,7 +83,8 @@
     "id": "64b9f5d3e6e5f12345678911",
     "title": "Deploy to Vercel",
     "description": "Deploy the application to Vercel and set up custom domain",
-    "isCompleted": true,
+    "status": "PENDING",
+    "estimatedTimeForCompletion": 1,
     "projectId": "668e9275812ee0a34e3341c2",
     "createdAt": "2024-07-12T18:00:00.000Z",
     "updatedAt": "2024-07-12T18:00:00.000Z"
@@ -84,7 +93,8 @@
     "id": "64b9f5d3e6e5f12345678912",
     "title": "Write Documentation",
     "description": "Create comprehensive documentation for the project",
-    "isCompleted": false,
+    "status": "PENDING",
+    "estimatedTimeForCompletion": 1,
     "projectId": "668e9275812ee0a34e3341c2",
     "createdAt": "2024-07-12T18:30:00.000Z",
     "updatedAt": "2024-07-12T18:30:00.000Z"
@@ -93,7 +103,8 @@
     "id": "64b9f5d3e6e5f12345678913",
     "title": "Set Up CI/CD",
     "description": "Configure continuous integration and deployment",
-    "isCompleted": false,
+    "estimatedTimeForCompletion": 1,
+    "status": "PENDING",
     "projectId": "668e9275812ee0a34e3341c3",
     "createdAt": "2024-07-12T19:00:00.000Z",
     "updatedAt": "2024-07-12T19:00:00.000Z"
@@ -102,8 +113,9 @@
     "id": "64b9f5d3e6e5f12345678914",
     "title": "Optimize Performance",
     "description": "Implement performance optimizations and code splitting",
-    "isCompleted": false,
+    "status": "PENDING",
     "projectId": "668e9275812ee0a34e3341c3",
+    "estimatedTimeForCompletion": 1,
     "createdAt": "2024-07-12T19:30:00.000Z",
     "updatedAt": "2024-07-12T19:30:00.000Z"
   }

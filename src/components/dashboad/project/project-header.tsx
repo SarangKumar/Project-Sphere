@@ -9,7 +9,7 @@ const ProjectHeader = ({
   project: Project;
 }) => {
   return (
-    <header className="sticky top-0 flex h-12 items-center gap-x-2 border-b bg-background px-6 py-4 text-xs text-secondary-foreground">
+    <header className="sticky top-0 flex h-12 items-center gap-x-2 border-b bg-background px-4 py-4 text-xs text-secondary-foreground md:px-6">
       <Link
         href="/dashboard"
         className="flex size-7 items-center justify-center rounded bg-secondary/40"

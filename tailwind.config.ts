@@ -107,12 +107,112 @@ const config = {
         180: "180ms",
         360: "360ms",
       },
+      typography: (theme: any) => ({
+        xs: {
+          css: {
+            h1: {
+              fontSize: theme("fontSize.xl"),
+              fontWeight: theme("fontWeight.bold"),
+              lineHeight: theme("lineHeight.2rem"),
+              marginBottom: theme("spacing.2"),
+            },
+            h2: {
+              fontSize: theme("fontSize.lg"),
+              marginBottom: theme("spacing.2"),
+            },
+            h3: {
+              fontSize: theme("fontSize.base"),
+              marginBottom: theme("spacing.1"),
+            },
+            h4: {
+              fontSize: theme("fontSize.sm"),
+              marginBottom: theme("spacing.1"),
+            },
+            h5: {
+              fontSize: theme("fontSize.xs"),
+              marginBottom: theme("spacing.1"),
+            },
+            p: {
+              fontSize: theme("fontSize.xs"),
+              marginBottom: theme("spacing.2"),
+            },
+            a: {
+              fontSize: theme("fontSize.sm"),
+              color: theme("colors.primary.500"),
+              "&:hover": { color: theme("colors.primary.700") },
+            },
+            blockquote: {
+              fontSize: theme("fontSize.sm"),
+              fontStyle: "italic",
+              color: theme("colors.secondary.foreground.500"),
+              paddingLeft: theme("spacing.2"),
+              borderLeftColor: theme("colors.primary.500"),
+              borderLeftWidth: theme("borderWidth.2"),
+            },
+            figure: { marginBottom: theme("spacing.2") },
+            figcaption: {
+              fontSize: theme("fontSize.xs"),
+              color: theme("colors.gray.500"),
+            },
+            strong: { fontWeight: theme("fontWeight.semibold") },
+            em: { fontStyle: "italic" },
+            kbd: {
+              padding: theme("spacing.1"),
+              fontSize: theme("fontSize.xs"),
+              backgroundColor: theme("colors.gray.100"),
+              borderRadius: theme("borderRadius.md"),
+            },
+            code: {
+              fontSize: theme("fontSize.sm"),
+              backgroundColor: theme("colors.gray.800"),
+              color: theme("colors.gray.100"),
+              padding: theme("spacing.1"),
+              borderRadius: theme("borderRadius.md"),
+            },
+            pre: {
+              fontSize: theme("fontSize.xs"),
+              backgroundColor: theme("colors.primary"),
+              padding: theme("spacing.2"),
+              borderRadius: theme("borderRadius.md"),
+              display: theme("block"),
+            },
+            ol: {
+              fontSize: theme("fontSize.sm"),
+              marginBottom: theme("spacing.2"),
+            },
+            ul: {
+              fontSize: theme("fontSize.sm"),
+              marginBottom: theme("spacing.2"),
+            },
+            li: { marginBottom: theme("spacing.1") },
+            table: {
+              fontSize: theme("fontSize.sm"),
+              marginBottom: theme("spacing.2"),
+            },
+            thead: { fontWeight: theme("fontWeight.semibold") },
+            tr: { borderBottomWidth: theme("borderWidth.2") },
+            th: { padding: theme("spacing.2") },
+            td: {
+              padding: theme("spacing.2"),
+              fontSize: theme("fontSize.xs"),
+            },
+            img: { marginBottom: theme("spacing.2") },
+            video: { marginBottom: theme("spacing.2") },
+            hr: {
+              marginTop: theme("spacing.4"),
+              marginBottom: theme("spacing.4"),
+            },
+          },
+        },
+      }),
     },
   },
+  safelist: ["prose-xs"],
   plugins: [
     require("tailwindcss-animate"),
     require("@tailwindcss/container-queries"),
     require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
   ],
 } satisfies Config;
 
